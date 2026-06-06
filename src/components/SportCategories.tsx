@@ -13,15 +13,15 @@ const sports = [
 
 export default function SportCategories() {
   return (
-    <section className="py-16 border-b border-white/5 overflow-hidden bg-dark-bg" id="sport-categories-section">
+    <section className="py-16 border-b border-green-100 overflow-hidden bg-dark-bg" id="sport-categories-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <span className="text-[10px] uppercase font-mono text-white/50 font-bold tracking-widest block mb-2">VAN EREDIVISIE TOT FORMULE 1</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white">Alle Sporten Live in 4K</h2>
+          <span className="text-[10px] uppercase font-mono text-green-600 font-bold tracking-widest block mb-2">VAN EREDIVISIE TOT FORMULE 1</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-green-900">Alle Sporten Live in 4K</h2>
         </div>
         <div className="w-full overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-dark-bg to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-dark-bg to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
           <div className="animate-scroll">
             <div className="flex gap-4 px-2">
               {[...sports, ...sports].map((sport, i) => (

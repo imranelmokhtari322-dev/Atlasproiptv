@@ -8,8 +8,8 @@ const PosterCard: React.FC<{ item: MediaItem }> = ({ item }) => (
     <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10">
-      <div className="p-3 rounded-full bg-white text-black scale-75 group-hover:scale-100 transition-transform duration-300 shadow-lg">
-        <Play className="w-5 h-5 fill-black" />
+      <div className="p-3 rounded-full bg-green-500 text-white scale-75 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+        <Play className="w-5 h-5 fill-white" />
       </div>
     </div>
     <div className="absolute bottom-0 left-0 right-0 p-3">
@@ -23,8 +23,8 @@ function CarouselRow({ items, speed = "animate-scroll" }: { items: MediaItem[]; 
   const doubled = [...items, ...items];
   return (
     <div className="w-full overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-dark-bg to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-dark-bg to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
       <div className={speed}>
         <div className="flex gap-4 px-2">
           {doubled.map((item, i) => <PosterCard key={`${item.id}-${i}`} item={item} />)}
@@ -38,10 +38,10 @@ const SectionRow: React.FC<{ label: string; title: string; badge: string; childr
   <div className="mb-12">
     <div className="flex items-center justify-between mb-5">
       <div>
-        <span className="text-[10px] uppercase font-mono text-white/40 font-bold tracking-widest block mb-1">{label}</span>
-        <h2 className="text-xl sm:text-2xl font-extrabold font-display tracking-tight text-white">{title}</h2>
+        <span className="text-[10px] uppercase font-mono text-green-600 font-bold tracking-widest block mb-1">{label}</span>
+        <h2 className="text-xl sm:text-2xl font-extrabold font-display tracking-tight text-green-900">{title}</h2>
       </div>
-      <span className="text-[10px] font-mono font-bold text-white/30 uppercase tracking-widest hidden sm:block">{badge}</span>
+      <span className="text-[10px] font-mono font-bold text-green-500 uppercase tracking-widest hidden sm:block">{badge}</span>
     </div>
     {children}
   </div>
@@ -49,7 +49,7 @@ const SectionRow: React.FC<{ label: string; title: string; badge: string; childr
 
 export default function SportsAndEntertainment() {
   return (
-    <section className="bg-dark-bg text-white py-14 border-b border-white/5 overflow-hidden" id="sports-entertainment-section">
+    <section className="bg-dark-bg text-green-900 py-14 border-b border-green-100 overflow-hidden" id="sports-entertainment-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <SectionRow label="NU TRENDING" title="Top Films in Nederland" badge="DIRECT BESCHIKBAAR IN 4K">

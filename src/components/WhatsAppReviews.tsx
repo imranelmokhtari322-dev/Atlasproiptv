@@ -18,8 +18,8 @@ function PhoneFrame({ src, index }: { src: string; index: number }) {
         borderRadius: 24,
         overflow: "hidden",
         boxShadow:
-          "0 8px 16px rgba(0,0,0,0.4), 0 20px 50px rgba(0,0,0,0.5), 0 0 40px rgba(20,184,166,0.08)",
-        border: "1px solid rgba(255,255,255,0.07)",
+          "0 8px 16px rgba(0,0,0,0.08), 0 20px 50px rgba(0,0,0,0.10), 0 0 40px rgba(22,163,74,0.08)",
+        border: "1px solid rgba(0,0,0,0.06)",
       }}>
         <img
           src={src}
@@ -47,12 +47,12 @@ function MarqueeRow({ images, reverse = false }: { images: string[]; reverse?: b
 
 export default function WhatsAppReviews() {
   return (
-    <section className="bg-dark-bg text-white py-16 border-b border-white/5" style={{ overflowX: "hidden" }} id="reviews-section">
+    <section className="bg-dark-bg text-green-900 py-16 border-b border-green-100" style={{ overflowX: "hidden" }} id="reviews-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase font-mono text-white/40 font-bold tracking-widest bg-white/5 border border-white/10 px-3 py-1 rounded-full mb-3 inline-block">23.000+ TEVREDEN KLANTEN</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mb-4">#1 IPTV in Nederland volgens onze klanten</h2>
-          <p className="text-white/50 text-sm sm:text-base">We laten onze WhatsApp supportberichten spreken. Hier zijn echte onbewerkte reacties van klanten.</p>
+          <span className="text-xs uppercase font-mono text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">23.000+ TEVREDEN KLANTEN</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-green-900 mb-4">#1 IPTV in Nederland volgens onze klanten</h2>
+          <p className="text-green-600 text-sm sm:text-base">We laten onze WhatsApp supportberichten spreken. Hier zijn echte onbewerkte reacties van klanten.</p>
         </div>
       </div>
 
@@ -62,11 +62,11 @@ export default function WhatsAppReviews() {
       </div>
 
       <div className="mt-10 text-center">
-        <p className="text-xs text-white/40 mb-4 inline-flex items-center gap-1.5 justify-center">
+        <p className="text-xs text-green-600 mb-4 inline-flex items-center gap-1.5 justify-center">
           <MessageSquare className="w-4 h-4" /> Heb je zelf een vraag en wil je live met support praten?
         </p><br />
         <a href="https://wa.me/31600000000" target="_blank" rel="noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-black hover:bg-gray-100 font-bold text-xs tracking-wide transition-all uppercase shadow-lg">
+          className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-green-600 text-white hover:bg-green-700 font-bold text-xs tracking-wide transition-all uppercase shadow-lg">
           Start WhatsApp Chat &rarr;
         </a>
       </div>
