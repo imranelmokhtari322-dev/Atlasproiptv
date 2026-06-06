@@ -62,7 +62,7 @@ export default function Header({ onScrollTo, onOpenReseller }: HeaderProps) {
           {/* Logo — centered on mobile, left on desktop */}
           <div onClick={() => onScrollTo("#hero-section")}
             className="absolute left-1/2 -translate-x-1/2 h-14 flex items-center cursor-pointer md:relative md:left-auto md:translate-x-0 md:pr-6 md:mr-6">
-            <span className={`text-2xl font-bold font-display tracking-tight transition-colors duration-300 ${pastHero ? "text-white" : "text-green-900"}`}>
+            <span className={`text-4xl md:text-2xl font-bold font-display tracking-tight transition-colors duration-300 ${pastHero ? "text-white" : "text-green-900"}`}>
               SwivTV
             </span>
           </div>
