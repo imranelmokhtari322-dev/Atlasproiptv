@@ -21,13 +21,13 @@ export default function ResellerModal({ isOpen, onClose }: ResellerModalProps) {
             className="relative w-full max-w-2xl bg-white border border-green-200 rounded-3xl shadow-2xl p-6 sm:p-8 text-green-900 max-h-[92vh] overflow-y-auto">
             <button onClick={onClose} className="absolute top-4 right-4 px-3 py-1 rounded-lg bg-green-50 text-green-600 hover:text-green-900 text-xs font-bold">Sluiten</button>
             <div className="text-left mb-6">
-              <span className="text-[10px] uppercase font-mono text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">PARTNER PROGRAMMA</span>
+              <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">PARTNER PROGRAMMA</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-green-900">Start je eigen IPTV Onderneming</h2>
               <p className="text-xs text-green-600 mt-1">Word IPTV reseller van SwivTV en verdien maandelijks een stabiel passief inkomen.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               <div className="md:col-span-5 flex flex-col gap-4 text-left">
-                <h3 className="text-xs font-bold text-green-600 uppercase tracking-widest font-mono border-b border-green-100 pb-2">Waarom SwivTV Reseller?</h3>
+                <h3 className="text-xs font-bold text-green-600 uppercase tracking-widest font-sans border-b border-green-100 pb-2">Waarom SwivTV Reseller?</h3>
                 {usps.map((u,i)=>(
                   <div key={i} className="flex gap-3 text-xs">
                     <div className="p-2 h-fit rounded-lg bg-green-100 border border-green-200 shrink-0 mt-0.5">{u.icon}</div>
@@ -42,16 +42,16 @@ export default function ResellerModal({ isOpen, onClose }: ResellerModalProps) {
                 <AnimatePresence mode="wait">
                   {!isSuccess ? (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-left">
-                      <h4 className="text-sm font-bold text-green-900 mb-2 flex items-center gap-1.5 font-mono"><Sparkles className="w-4 h-4"/>Vrijblijvende Aanvraag</h4>
+                      <h4 className="text-sm font-bold text-green-900 mb-2 flex items-center gap-1.5 font-sans"><Sparkles className="w-4 h-4"/>Vrijblijvende Aanvraag</h4>
                       {[{label:"Naam:",val:name,set:setName,type:"text",ph:"bijv. Sander de Groot"},{label:"E-mail:",val:email,set:setEmail,type:"email",ph:"sander@gmail.com"},{label:"WhatsApp:",val:phone,set:setPhone,type:"tel",ph:"+31 6 12345678"}].map(f=>(
                         <div key={f.label}>
-                          <label className="text-[10px] font-bold text-green-600 uppercase tracking-widest block mb-1 font-mono">{f.label}</label>
+                          <label className="text-[10px] font-bold text-green-600 uppercase tracking-widest block mb-1 font-sans">{f.label}</label>
                           <input type={f.type} required value={f.val} onChange={e=>f.set(e.target.value)} placeholder={f.ph}
                             className="w-full bg-white border border-green-200 rounded-lg py-2 px-3 text-xs text-green-900 placeholder-green-400 focus:outline-none focus:border-green-400"/>
                         </div>
                       ))}
                       <div>
-                        <label className="text-[10px] font-bold text-green-600 uppercase tracking-widest block mb-1 font-mono">Credits:</label>
+                        <label className="text-[10px] font-bold text-green-600 uppercase tracking-widest block mb-1 font-sans">Credits:</label>
                         <select value={desiredCredits} onChange={e=>setDesiredCredits(e.target.value)} className="w-full bg-white border border-green-200 rounded-lg py-2 px-3 text-xs text-green-900 focus:outline-none">
                           <option value="test_only">Gratis testpaneel aanvragen</option>
                           <option value="50_credits">Brons (50 credits)</option>
@@ -60,7 +60,7 @@ export default function ResellerModal({ isOpen, onClose }: ResellerModalProps) {
                         </select>
                       </div>
                       <button type="submit" disabled={isSubmitting}
-                        className="w-full mt-3 py-3 rounded-xl bg-green-600 text-white hover:bg-green-700 font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-1.5 disabled:opacity-50 transition-all cursor-pointer">
+                        className="w-full mt-3 py-3 rounded-xl bg-amber-400 text-green-900 hover:bg-amber-500 font-extrabold text-xs tracking-wider uppercase flex items-center justify-center gap-1.5 disabled:opacity-50 transition-all cursor-pointer">
                         {isSubmitting?"Versturen...":<><Send className="w-3.5 h-3.5"/><span>Aanvraag versturen</span></>}
                       </button>
                     </form>

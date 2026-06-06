@@ -15,7 +15,7 @@ export default function ChannelSearch() {
   const doubledNames = [...bigNames, ...bigNames];
 
   return (
-    <section className="relative bg-dark-bg text-green-900 py-14 border-b border-green-100 overflow-hidden" id="channels-section">
+    <section className="relative bg-green-50 text-green-900 py-14 border-b border-green-200 overflow-hidden" id="channels-section">
 
       {/* Big scrolling names */}
       <div className="w-full overflow-hidden relative mb-12">
@@ -30,14 +30,14 @@ export default function ChannelSearch() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <span className="text-[10px] uppercase font-mono text-green-600 font-bold tracking-widest block mb-1">LIVE TV</span>
+          <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest block mb-1">LIVE TV</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-green-900">Al je favoriete zenders</h2>
         </div>
 
         {/* Auto-scrolling logos */}
         <div className="w-full overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-green-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-green-50 to-transparent z-10 pointer-events-none" />
           <div className="animate-scroll-slow">
             <div className="flex gap-5 px-2">
               {doubled.map((ch, i) => (

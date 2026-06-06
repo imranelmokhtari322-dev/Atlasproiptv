@@ -7,65 +7,82 @@ interface FooterProps {
 
 export default function Footer({ onScrollTo, onOpenReseller }: FooterProps) {
   return (
-    <footer className="bg-dark-bg border-t border-green-100 text-green-600 py-12 md:py-16" id="main-footer">
+    <footer className="bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 border-t-2 border-green-700 text-green-300 py-14 md:py-20" id="main-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-          <div className="md:col-span-4 flex flex-col items-start gap-4">
-            <div className="flex items-center gap-2 cursor-pointer" onClick={() => onScrollTo("#hero-section")}>
-              <div className="w-8 h-8 rounded-lg bg-green-100 border border-green-300 flex items-center justify-center">
-                <div className="w-3.5 h-3.5 rotate-45 border-2 border-green-700 flex items-center justify-center">
-                  <div className="w-1.5 h-1.5 bg-green-700 rounded-full"></div>
-                </div>
-              </div>
-              <span className="text-lg font-bold font-display tracking-tight text-green-900">SwivTV</span>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+
+          {/* Brand */}
+          <div className="md:col-span-4 flex flex-col items-start gap-5">
+            <div className="cursor-pointer" onClick={() => onScrollTo("#hero-section")}>
+              <span className="text-3xl font-extrabold font-display tracking-tight text-white">SwivTV</span>
             </div>
-            <p className="text-xs text-green-600 leading-relaxed max-w-sm">SwivTV is de meest stabiele IPTV provider van Nederland en België. Geniet van live TV, sport en VOD op al je apparaten.</p>
-            <div className="flex items-center gap-2 text-[10px] uppercase font-mono tracking-wider font-bold text-green-700 mt-2">
-              <span className="inline-block w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>All Services Operational 100%
+            <p className="text-sm text-green-300 leading-relaxed max-w-sm">
+              De meest stabiele IPTV provider van Nederland en België. Live TV, sport en VOD op al je apparaten.
+            </p>
+            <div className="flex items-center gap-2.5 mt-1">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-60" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400" />
+              </span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-amber-400 font-sans">All Services Operational 100%</span>
             </div>
           </div>
-          <div className="md:col-span-2 flex flex-col items-start gap-3.5">
-            <h4 className="text-xs font-bold text-green-900 uppercase tracking-wider font-mono">Pakketten</h4>
-            <div className="flex flex-col gap-2 text-xs">
-              {["3 Maanden Pakket","6 Maanden Pakket","12+3 Maanden Bonus Deal","1 Maand Proefabonnement"].map(l=>(
-                <button key={l} onClick={() => onScrollTo("#pricing-section")} className="hover:text-green-900 transition-colors text-left">{l}</button>
+
+          {/* Pakketten */}
+          <div className="md:col-span-2 flex flex-col items-start gap-4">
+            <h4 className="text-xs font-extrabold text-amber-400 uppercase tracking-widest font-sans">Pakketten</h4>
+            <div className="flex flex-col gap-2.5 text-sm">
+              {["3 Maanden Pakket","6 Maanden Pakket","12+3 Maanden Deal","1 Maand Proef"].map(l => (
+                <button key={l} onClick={() => onScrollTo("#pricing-section")}
+                  className="hover:text-amber-400 transition-colors text-left text-green-300">{l}</button>
               ))}
             </div>
           </div>
-          <div className="md:col-span-3 flex flex-col items-start gap-3.5">
-            <h4 className="text-xs font-bold text-green-900 uppercase tracking-wider font-mono">Installatie</h4>
-            <div className="flex flex-col gap-2 text-xs">
-              {["Samsung & LG Smart TV Setup","Amazon Fire TV Stick Setup","Apple TV / iOS Setup","Formuler & Android Box Setup"].map(l=>(
-                <button key={l} onClick={() => onScrollTo("#setup-section")} className="hover:text-green-900 transition-colors text-left">{l}</button>
+
+          {/* Installatie */}
+          <div className="md:col-span-3 flex flex-col items-start gap-4">
+            <h4 className="text-xs font-extrabold text-amber-400 uppercase tracking-widest font-sans">Installatie</h4>
+            <div className="flex flex-col gap-2.5 text-sm">
+              {["Samsung & LG Smart TV","Amazon Fire TV Stick","Apple TV / iOS","Formuler & Android Box"].map(l => (
+                <button key={l} onClick={() => onScrollTo("#setup-section")}
+                  className="hover:text-amber-400 transition-colors text-left text-green-300">{l}</button>
               ))}
             </div>
           </div>
-          <div className="md:col-span-3 flex flex-col items-start gap-3.5">
-            <h4 className="text-xs font-bold text-green-900 uppercase tracking-wider font-mono">Klantenbeheer</h4>
-            <div className="flex flex-col gap-2.5 text-xs">
-              <button onClick={onOpenReseller} className="hover:text-green-900 transition-colors text-left font-bold flex items-center gap-1.5 text-green-700">
-                <ShieldCheck className="w-3.5 h-3.5" /> Wordt een Reseller
+
+          {/* Contact */}
+          <div className="md:col-span-3 flex flex-col items-start gap-4">
+            <h4 className="text-xs font-extrabold text-amber-400 uppercase tracking-widest font-sans">Contact</h4>
+            <div className="flex flex-col gap-3 text-sm">
+              <button onClick={onOpenReseller}
+                className="flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold transition-colors text-left">
+                <ShieldCheck className="w-4 h-4 shrink-0" /> Wordt een Reseller
               </button>
-              <a href="https://wa.me/31600000000" target="_blank" rel="noreferrer" className="hover:text-green-900 transition-colors flex items-center gap-1">
-                <Phone className="w-3.5 h-3.5" /> WhatsApp Direct Support
+              <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer"
+                className="flex items-center gap-2 text-green-300 hover:text-amber-400 transition-colors">
+                <Phone className="w-4 h-4 shrink-0" /> WhatsApp 24/7 Support
               </a>
-              <div className="flex items-center gap-1.5 text-green-500 text-[11px] mt-1">
-                <Mail className="w-3.5 h-3.5" /><span>support@swivtv.net</span>
+              <div className="flex items-center gap-2 text-green-400 text-sm">
+                <Mail className="w-4 h-4 shrink-0" /><span>support@swivtv.net</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="border-t border-green-100 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-xs text-green-500">
-            <span>&copy; {new Date().getFullYear()} SwivTV Premium IPTV. Alle rechten voorbehouden.</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-3 bg-green-50 border border-green-200 px-4 py-2 rounded-xl">
-            <span className="text-[9px] uppercase font-mono tracking-widest text-green-500 mr-1.5 font-bold">Veilig Betalen:</span>
-            {["iDEAL","Bancontact","PayPal","VISA / MC"].map(p=>(
-              <span key={p} className="text-green-700 font-bold text-[10px] px-1.5 py-0.5 rounded bg-green-50 border border-green-200">{p}</span>
+
+        {/* Bottom bar */}
+        <div className="border-t border-green-700/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <p className="text-xs text-green-500">
+            &copy; {new Date().getFullYear()} SwivTV Premium IPTV. Alle rechten voorbehouden.
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[10px] uppercase font-sans tracking-widest text-green-500 font-bold mr-1">Veilig Betalen:</span>
+            {["iDEAL","Bancontact","PayPal","VISA / MC"].map(p => (
+              <span key={p} className="text-amber-400 font-bold text-[10px] px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">{p}</span>
             ))}
           </div>
         </div>
+
       </div>
     </footer>
   );

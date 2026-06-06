@@ -18,10 +18,10 @@ export default function SetupWizard() {
     pc:        [{step:"1",text:"Download 'VLC Media Player' of 'IPTV Smarters voor Windows'."},{step:"2",text:"Klik op 'Media' → 'Netwerkstream openen'."},{step:"3",text:"Plak de M3U playlist URL uit je SwivTV e-mail."},{step:"4",text:"Klik op 'Afspelen' en schakel tussen alle 23.500+ live zenders."}],
   };
   return (
-    <section className="bg-dark-bg text-green-900 py-16 border-b border-green-100" id="setup-section">
+    <section className="bg-green-50 text-green-900 py-16 border-b border-green-200" id="setup-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs uppercase font-mono text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">STAP-VOOR-STAP INSTALLATIE</span>
+          <span className="text-xs uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">STAP-VOOR-STAP INSTALLATIE</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-green-900 mb-4">Eenvoudige installatie op elk apparaat</h2>
           <p className="text-green-600 text-sm sm:text-base">Selecteer je apparaat en volg de simpele 4-stappen handleiding.</p>
         </div>
@@ -37,9 +37,9 @@ export default function SetupWizard() {
           <div className="lg:col-span-7 flex flex-col gap-4 text-left">
             {instructions[selectedDevice].map((inst) => (
               <div key={inst.step} className="p-5 rounded-2xl border border-green-100 bg-white shadow-sm flex gap-4 items-start">
-                <div className="w-8 h-8 rounded-lg bg-green-100 border border-green-200 text-green-800 flex items-center justify-center font-bold text-sm shrink-0 font-mono">{inst.step}</div>
+                <div className="w-8 h-8 rounded-lg bg-green-100 border border-green-200 text-green-800 flex items-center justify-center font-bold text-sm shrink-0 font-sans">{inst.step}</div>
                 <div>
-                  <h4 className="text-sm font-bold text-green-900 mb-1 uppercase font-mono tracking-wider">Stap {inst.step}</h4>
+                  <h4 className="text-sm font-bold text-green-900 mb-1 uppercase font-sans tracking-wider">Stap {inst.step}</h4>
                   <p className="text-xs text-green-600 leading-relaxed">{inst.text}</p>
                 </div>
               </div>
@@ -47,7 +47,7 @@ export default function SetupWizard() {
           </div>
           <div className="lg:col-span-5 flex flex-col justify-between p-6 rounded-2xl border border-green-200 bg-white shadow-sm text-left">
             <div>
-              <div className="flex items-center gap-2 text-green-800 font-bold mb-4 font-mono text-xs tracking-wider uppercase">
+              <div className="flex items-center gap-2 text-green-800 font-bold mb-4 font-sans text-xs tracking-wider uppercase">
                 <BookOpen className="w-5 h-5" /><span>Support Garantie</span>
               </div>
               <h3 className="text-lg font-extrabold text-green-900 mb-3">Hulp nodig bij installatie?</h3>
@@ -56,8 +56,8 @@ export default function SetupWizard() {
                 <span className="font-bold text-green-900">Tip:</span> Installeer <strong className="text-green-900">IPTV Smarters Pro</strong> — de meest stabiele speler.
               </div>
             </div>
-            <a href="https://wa.me/31600000000" target="_blank" rel="noreferrer"
-              className="mt-6 py-3.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-xs tracking-wide text-center uppercase shadow-lg block transition-colors">
+            <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer"
+              className="mt-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-green-900 font-bold text-xs tracking-wide text-center uppercase shadow-lg block transition-colors">
               Vraag hulp gratis aan
             </a>
           </div>

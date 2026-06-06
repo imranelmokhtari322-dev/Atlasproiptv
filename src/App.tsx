@@ -34,7 +34,7 @@ export default function App() {
     
     // Redirect to real WhatsApp API with customized text
     const cleanMsg = encodeURIComponent(widgetMsg);
-    window.open(`https://wa.me/31600000000?text=${cleanMsg}`, "_blank", "noopener,noreferrer");
+    window.open(`https://wa.me/447449708976?text=${cleanMsg}`, "_blank", "noopener,noreferrer");
     setWidgetMsg("");
     setWhatsappWidgetOpen(false);
   };
@@ -113,7 +113,7 @@ export default function App() {
             <div className="p-4 bg-sky-50 flex flex-col gap-2 min-h-[120px]">
               <div className="self-start max-w-[90%] rounded-r-xl rounded-bl-xl bg-white border border-gray-100 text-xs p-3 shadow-sm text-left">
                 <p className="leading-relaxed text-gray-700">Beste! Welkom bij SwivTV support. Ik help je graag met de installatie of zendervragen. Wat wil je graag weten?</p>
-                <span className="text-[8px] text-gray-400 block text-right mt-1 font-mono">Nu</span>
+                <span className="text-[8px] text-gray-400 block text-right mt-1 font-sans">Nu</span>
               </div>
             </div>
 

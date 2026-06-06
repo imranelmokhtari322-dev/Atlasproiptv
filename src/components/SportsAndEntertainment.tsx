@@ -14,7 +14,7 @@ const PosterCard: React.FC<{ item: MediaItem }> = ({ item }) => (
     </div>
     <div className="absolute bottom-0 left-0 right-0 p-3">
       <h4 className="text-white font-extrabold text-sm leading-tight line-clamp-1">{item.title}</h4>
-      <p className="text-white/50 text-[10px] font-bold uppercase tracking-widest mt-0.5 font-mono line-clamp-1">{item.genre}</p>
+      <p className="text-white/50 text-[10px] font-bold uppercase tracking-widest mt-0.5 font-sans line-clamp-1">{item.genre}</p>
     </div>
   </div>
 );
@@ -23,8 +23,8 @@ function CarouselRow({ items, speed = "animate-scroll" }: { items: MediaItem[]; 
   const doubled = [...items, ...items];
   return (
     <div className="w-full overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-green-50 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-green-50 to-transparent z-10 pointer-events-none" />
       <div className={speed}>
         <div className="flex gap-4 px-2">
           {doubled.map((item, i) => <PosterCard key={`${item.id}-${i}`} item={item} />)}
@@ -38,10 +38,10 @@ const SectionRow: React.FC<{ label: string; title: string; badge: string; childr
   <div className="mb-12">
     <div className="flex items-center justify-between mb-5">
       <div>
-        <span className="text-[10px] uppercase font-mono text-green-600 font-bold tracking-widest block mb-1">{label}</span>
+        <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest block mb-1">{label}</span>
         <h2 className="text-xl sm:text-2xl font-extrabold font-display tracking-tight text-green-900">{title}</h2>
       </div>
-      <span className="text-[10px] font-mono font-bold text-green-500 uppercase tracking-widest hidden sm:block">{badge}</span>
+      <span className="text-[10px] font-sans font-bold text-green-500 uppercase tracking-widest hidden sm:block">{badge}</span>
     </div>
     {children}
   </div>
@@ -49,7 +49,7 @@ const SectionRow: React.FC<{ label: string; title: string; badge: string; childr
 
 export default function SportsAndEntertainment() {
   return (
-    <section className="bg-dark-bg text-green-900 py-14 border-b border-green-100 overflow-hidden" id="sports-entertainment-section">
+    <section className="bg-green-50 text-green-900 py-14 border-b border-green-200 overflow-hidden" id="sports-entertainment-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <SectionRow label="NU TRENDING" title="Top Films in Nederland" badge="DIRECT BESCHIKBAAR IN 4K">

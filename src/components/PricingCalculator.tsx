@@ -63,28 +63,34 @@ export default function PricingCalculator() {
     { id:"12_plus_3_months" as BillingPeriod, label:"12+3 Maanden", sub:"€5,20/maand!", bonus:true },
   ];
 
+  const openWhatsApp = (plan: "VIP" | "Basis", price: number) => {
+    const periodLabel = periods.find(p => p.id === selectedPeriod)?.label ?? selectedPeriod;
+    const msg = `Hallo, ik wil het *${plan === "VIP" ? "✦ Premium VIP+" : "Basis"}* pakket bestellen. ${periodLabel}, ${selectedDevices} scherm(en), €${price.toFixed(2).replace(".", ",")}.`;
+    window.open(`https://wa.me/447449708976?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <section className="relative bg-dark-bg text-green-900 py-16 border-b border-green-100 overflow-hidden" id="pricing-section">
+    <section className="relative bg-gradient-to-b from-green-900 via-green-800 to-white text-white py-16 border-b-2 border-green-200 overflow-hidden" id="pricing-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase font-mono text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-6 inline-block">PRIJZEN</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-green-900 leading-tight mb-10">
+          <span className="text-xs uppercase font-sans text-emerald-300 font-bold tracking-widest bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-6 inline-block">PRIJZEN</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white leading-tight mb-10">
             Eén abonnement,{" "}
-            <span className="italic font-serif font-normal text-green-600">eindeloze</span>
+            <span className="italic font-serif font-normal text-emerald-300">eindeloze</span>
             <br />mogelijkheden
           </h2>
 
-          <p className="text-green-700 text-base sm:text-lg font-medium mb-8 leading-relaxed">
-            Het is <span className="text-green-900 font-bold italic">"je gaat nooit meer terug"</span> beter.<br />
-            <span className="text-green-600 text-sm sm:text-base font-normal">SwivTV vervangt dure Ziggo-pakketten en meerdere streamingdiensten voor één vaste prijs.</span>
+          <p className="text-green-100 text-base sm:text-lg font-medium mb-8 leading-relaxed">
+            Het is <span className="text-white font-bold italic">"je gaat nooit meer terug"</span> beter.<br />
+            <span className="text-green-200 text-sm sm:text-base font-normal">SwivTV vervangt dure Ziggo-pakketten en meerdere streamingdiensten voor één vaste prijs.</span>
           </p>
 
           {/* Countdown timer */}
-          <div className="inline-block bg-white border border-green-200 rounded-2xl px-8 py-6 shadow-md">
+          <div className="inline-block bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-8 py-6 shadow-md">
             <div className="flex items-center gap-2 justify-center mb-5">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[11px] font-bold uppercase tracking-widest text-green-600 font-mono">
+              <span className="text-[11px] font-bold uppercase tracking-widest text-green-200 font-sans">
                 Beperkte aanbieding eindigt om middernacht
               </span>
             </div>
@@ -96,14 +102,14 @@ export default function PricingCalculator() {
               ].map((unit, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="text-center">
-                    <div className="bg-green-50 border border-green-200 rounded-xl w-16 h-16 flex items-center justify-center">
-                      <span className="text-3xl font-black font-mono text-green-900">
+                    <div className="bg-white/20 border border-white/30 rounded-xl w-16 h-16 flex items-center justify-center">
+                      <span className="text-3xl font-black text-white font-display">
                         {unit.val.toString().padStart(2, "0")}
                       </span>
                     </div>
-                    <span className="text-[9px] text-green-500 font-mono tracking-widest mt-1 block">{unit.label}</span>
+                    <span className="text-[9px] text-green-300 font-sans tracking-widest mt-1 block">{unit.label}</span>
                   </div>
-                  {i < 2 && <span className="text-2xl font-black text-green-400 mb-5">:</span>}
+                  {i < 2 && <span className="text-2xl font-black text-white/50 mb-5">:</span>}
                 </div>
               ))}
             </div>
@@ -111,9 +117,9 @@ export default function PricingCalculator() {
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-xs uppercase font-mono text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">IPTV ABONNEMENTEN</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-green-900 mb-4">Eén vast tarief, onbeperkt plezier</h2>
-          <p className="text-green-600 text-sm sm:text-base">Kies je periode en aantal apparaten. Geen onverwachte kosten.</p>
+          <span className="text-xs uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">IPTV ABONNEMENTEN</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mb-4">Eén vast tarief, onbeperkt plezier</h2>
+          <p className="text-green-700 text-sm sm:text-base">Kies je periode en aantal apparaten. Geen onverwachte kosten.</p>
         </div>
 
         <div className="max-w-4xl mx-auto bg-white border border-green-100 rounded-2xl p-6 sm:p-8 shadow-md mb-12">
@@ -122,22 +128,23 @@ export default function PricingCalculator() {
 
               {/* Period tabs */}
               <div>
-                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-mono">1. Kies de abonnementsduur:</label>
-                <div className="bg-green-50 rounded-2xl p-1.5 flex gap-1">
+                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-sans">1. Kies de abonnementsduur:</label>
+                <div className="flex gap-2">
                   {periods.map((p) => (
                     <button key={p.id} onClick={() => setSelectedPeriod(p.id)}
-                      className={`relative flex-1 py-4 rounded-xl text-center font-bold text-sm transition-all cursor-pointer overflow-hidden ${
+                      className={`relative flex-1 py-4 rounded-2xl text-center font-bold text-sm transition-all cursor-pointer overflow-hidden border-2 ${
                         selectedPeriod === p.id
                           ? p.bonus
-                            ? "bg-gradient-to-br from-green-600 via-green-500 to-green-700 text-white shadow-lg"
-                            : "bg-green-600 text-white shadow-md"
-                          : "text-green-500 hover:text-green-700"
+                            ? "bg-amber-400 border-amber-400 text-green-900 shadow-lg"
+                            : "bg-green-600 border-green-600 text-white shadow-md"
+                          : "bg-white border-green-200 text-green-600 hover:border-green-400 hover:text-green-800"
                       }`}>
-                      {p.bonus && selectedPeriod === p.id && (
-                        <span className="absolute top-1.5 right-1.5 bg-white text-green-700 text-[8px] font-black px-1.5 py-0.5 rounded-full">-50%</span>
-                      )}
+                      <span className="absolute top-1.5 right-1.5 bg-green-900 text-amber-400 text-[8px] font-black px-1.5 py-0.5 rounded-full"
+                        style={{ display: p.bonus ? "block" : "none" }}>-50%</span>
                       <span className="block font-extrabold">{p.label}</span>
-                      {p.bonus && <span className="text-[9px] uppercase tracking-widest font-bold opacity-80 block mt-0.5">BESTE DEAL</span>}
+                      <span className={`text-[9px] uppercase tracking-widest font-bold block mt-0.5 ${selectedPeriod === p.id ? (p.bonus ? "text-green-800" : "text-green-200") : "text-green-400"}`}>
+                        {p.sub}
+                      </span>
                     </button>
                   ))}
                 </div>
@@ -145,16 +152,16 @@ export default function PricingCalculator() {
 
               {/* Device grid */}
               <div>
-                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-mono">2. Aantal gelijktijdige schermen:</label>
-                <div className="bg-green-50 rounded-2xl p-1.5 grid grid-cols-2 gap-1">
+                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-sans">2. Aantal gelijktijdige schermen:</label>
+                <div className="grid grid-cols-2 gap-2">
                   {["1","2","3","4"].map((dev) => (
                     <button key={dev} onClick={() => setSelectedDevices(dev as "1"|"2"|"3"|"4")}
-                      className={`flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-sm transition-all cursor-pointer ${
+                      className={`flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-sm transition-all cursor-pointer border-2 ${
                         selectedDevices === dev
-                          ? "bg-green-600 text-white shadow-md"
-                          : "text-green-500 hover:text-green-700"
+                          ? "bg-green-600 border-green-600 text-white shadow-md"
+                          : "bg-white border-green-200 text-green-600 hover:border-green-400 hover:text-green-800"
                       }`}>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                      <svg className={`w-5 h-5 ${selectedDevices === dev ? "text-white" : "text-green-400"}`} fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                         <rect x="2" y="3" width="20" height="14" rx="2"/>
                         <path d="M8 21h8M12 17v4"/>
                       </svg>
@@ -171,19 +178,17 @@ export default function PricingCalculator() {
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
 
           {/* Premium VIP */}
-          <div className="relative rounded-2xl border border-green-400/50 bg-gradient-to-b from-green-700/10 to-white p-8 min-h-[560px] flex flex-col shadow-md">
-            <div className="flex justify-center mb-3"><span className="bg-green-700 text-white text-[10px] font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest shadow-md">BESTE DEAL</span></div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-100 border border-green-300 text-green-700 text-[10px] font-bold uppercase tracking-widest">
-                ✦ PREMIUM VIP +
+          <div className="relative rounded-2xl border border-amber-300 bg-gradient-to-b from-amber-400 to-amber-300 p-8 min-h-[560px] flex flex-col shadow-xl">
+            <div className="flex justify-center mb-4"><span className="bg-green-900 text-amber-400 text-[10px] font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest shadow-md">BESTE DEAL</span></div>
+            <h3 className="text-3xl font-extrabold font-display text-green-900 mb-1">✦ PREMIUM VIP +</h3>
+            <p className="text-green-800/70 text-xs font-sans uppercase tracking-widest mb-4">12+3 MAANDEN</p>
+            <div className="mb-4">
+              <span onClick={() => openWhatsApp("VIP", vipPrice)}
+                className="text-5xl font-black text-green-900 font-display cursor-pointer hover:text-green-700 transition-colors">
+                €{vipPrice.toFixed(2).replace(".",",")}
               </span>
             </div>
-            <p className="text-green-600 text-xs font-mono uppercase tracking-widest mb-1">12+3 MAANDEN</p>
-            <h3 className="text-2xl font-extrabold text-green-900 mb-4">Premium VIP Pakket</h3>
-            <div className="mb-4">
-              <span className="text-5xl font-black text-green-900">€{vipPrice.toFixed(2).replace(".",",")}</span>
-            </div>
-            <p className="text-green-500 text-xs mb-5 flex items-center gap-1">
+            <p className="text-green-800/70 text-xs mb-5 flex items-center gap-1">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
               1 apparaat inbegrepen
             </p>
@@ -204,9 +209,9 @@ export default function PricingCalculator() {
                 "Exclusieve VIP Content",
                 "Videoland, Netflix, Amazon, HBO, Apple TV, Hulu",
               ].map((feature) => (
-                <div key={feature} className="flex items-start gap-2.5 text-xs text-green-800">
-                  <div className="w-4 h-4 rounded-full bg-green-100 border border-green-300 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <svg className="w-2.5 h-2.5 text-green-600" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                <div key={feature} className="flex items-start gap-2.5 text-xs text-green-900">
+                  <div className="w-4 h-4 rounded-full bg-green-900/15 border border-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-2.5 h-2.5 text-green-900" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
                     </svg>
                   </div>
@@ -215,24 +220,21 @@ export default function PricingCalculator() {
               ))}
             </div>
 
-            <button onClick={() => { setCheckoutStep("details"); setCheckoutModalOpen(true); }}
-              className="w-full py-3.5 rounded-xl bg-green-600 hover:bg-green-700 text-white font-bold text-sm uppercase tracking-wide transition-all cursor-pointer shadow-lg mt-auto">
+            <button onClick={() => openWhatsApp("VIP", vipPrice)}
+              className="w-full py-3.5 rounded-xl bg-green-900 hover:bg-green-800 text-amber-400 font-bold text-sm uppercase tracking-wide transition-all cursor-pointer mt-auto shadow-lg">
               Bestel Nu &rarr;
             </button>
           </div>
 
           {/* Basis */}
           <div className="relative rounded-2xl border border-green-200 bg-gradient-to-b from-green-50 to-white p-8 min-h-[560px] flex flex-col shadow-sm">
-            <div className="flex justify-center mb-4"><span className="bg-green-100 text-green-800 text-[10px] font-extrabold px-4 py-1 rounded-full uppercase tracking-widest border border-green-300">POPULAIR</span></div>
-            <div className="flex items-center gap-2 mb-4 mt-2">
-              <span className="flex items-center gap-1 px-2 py-1 rounded-full bg-green-50 border border-green-200 text-green-700 text-[10px] font-bold uppercase tracking-widest">
-                BASIS
-              </span>
-            </div>
-            <p className="text-green-600 text-xs font-mono uppercase tracking-widest mb-1">12 MAANDEN</p>
-            <h3 className="text-2xl font-extrabold text-green-900 mb-4">Basis Pakket</h3>
+            <h3 className="text-3xl font-extrabold font-display text-green-900 mb-1 mt-2">Basis</h3>
+            <p className="text-green-600 text-xs font-sans uppercase tracking-widest mb-4">12 MAANDEN</p>
             <div className="mb-4">
-              <span className="text-5xl font-black text-green-900">€{normalPrice.toFixed(2).replace(".",",")}</span>
+              <span onClick={() => openWhatsApp("Basis", normalPrice)}
+                className="text-5xl font-black text-green-900 cursor-pointer hover:text-green-700 transition-colors" style={{ fontFamily: "'Sour Gummy', cursive" }}>
+                €{normalPrice.toFixed(2).replace(".",",")}
+              </span>
             </div>
             <p className="text-green-500 text-xs mb-5 flex items-center gap-1">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
@@ -265,18 +267,13 @@ export default function PricingCalculator() {
               ))}
             </div>
 
-            <button onClick={() => { setCheckoutStep("details"); setCheckoutModalOpen(true); }}
+            <button onClick={() => openWhatsApp("Basis", normalPrice)}
               className="w-full py-3.5 rounded-xl bg-green-50 hover:bg-green-100 border border-green-300 text-green-800 font-bold text-sm uppercase tracking-wide transition-all cursor-pointer mt-auto">
               Bestel Nu &rarr;
             </button>
           </div>
         </div>
 
-        <div className="max-w-xl mx-auto border border-dashed border-green-200 rounded-xl p-5 text-center">
-          <p className="text-xs text-green-600">Liever eerst proberen? 1 maand kost <strong className="text-green-900">€14.99</strong>.
-            <button onClick={() => { setSelectedPeriod("3_months"); setCheckoutStep("details"); setCheckoutModalOpen(true); }} className="text-green-700 underline ml-1.5 font-bold hover:text-green-900">Probeer 1 maand &rarr;</button>
-          </p>
-        </div>
       </div>
 
       {/* Checkout Modal */}
@@ -287,7 +284,7 @@ export default function PricingCalculator() {
               className="relative w-full max-w-lg bg-white border border-green-200 rounded-2xl shadow-2xl p-6 sm:p-8 text-green-900 max-h-[90vh] overflow-y-auto">
               <button onClick={() => setCheckoutModalOpen(false)} className="absolute top-4 right-4 px-3 py-1 rounded-lg bg-green-50 text-green-600 hover:text-green-900 text-xs font-bold">Sluiten</button>
 
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-green-100 text-xs text-green-500 font-mono">
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-green-100 text-xs text-green-500 font-sans">
                 {["details","payment","processing","success"].map((step,i)=>(
                   <span key={step} className={checkoutStep===step?"text-green-900 font-bold":"text-green-400"}>
                     {i+1}. {["Account","Betaling","Activatie","Voltooid"][i]}
@@ -301,12 +298,12 @@ export default function PricingCalculator() {
                   <p className="text-xs text-green-600 mb-5">We sturen je inloggegevens direct naar je e-mail.</p>
                   <div className="flex flex-col gap-4">
                     <div>
-                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-mono">E-mailadres:</label>
+                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-sans">E-mailadres:</label>
                       <input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="jouw@email.nl"
                         className="w-full bg-green-50 border border-green-200 rounded-xl py-3 px-4 text-sm text-green-900 placeholder-green-400 focus:outline-none focus:border-green-400"/>
                     </div>
                     <div>
-                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-mono">Apparaat:</label>
+                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-sans">Apparaat:</label>
                       <select value={targetDevice} onChange={e=>setTargetDevice(e.target.value)} className="w-full bg-green-50 border border-green-200 rounded-xl py-3 px-4 text-sm text-green-900 focus:outline-none">
                         <option>Smart TV (IPTV Smarters / Flix)</option>
                         <option>Amazon Firestick (TiviMate)</option>
@@ -376,12 +373,12 @@ export default function PricingCalculator() {
                     {[{label:"Host:",val:generatedLine.host},{label:"Gebruikersnaam:",val:generatedLine.username},{label:"Wachtwoord:",val:generatedLine.password}].map((item,i)=>(
                       <div key={i} className={`flex justify-between items-center py-1 ${i<2?"border-b border-green-100":""}`}>
                         <span className="text-green-500">{item.label}</span>
-                        <span className="font-mono text-green-900 font-bold select-all">{item.val}</span>
+                        <span className="font-sans text-green-900 font-bold select-all">{item.val}</span>
                       </div>
                     ))}
                     <div className="flex justify-between items-center py-1 border-t border-green-100">
                       <span className="text-green-500">M3U URL:</span>
-                      <button onClick={()=>navigator.clipboard.writeText(generatedLine.m3uUrl).then(()=>alert("Gekopieerd!"))} className="text-green-700 font-bold flex items-center gap-1 font-mono text-[10px] hover:text-green-900">
+                      <button onClick={()=>navigator.clipboard.writeText(generatedLine.m3uUrl).then(()=>alert("Gekopieerd!"))} className="text-green-700 font-bold flex items-center gap-1 font-sans text-[10px] hover:text-green-900">
                         <Copy className="w-3 h-3"/> Kopieer
                       </button>
                     </div>

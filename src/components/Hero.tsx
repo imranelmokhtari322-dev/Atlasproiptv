@@ -7,16 +7,17 @@ interface HeroProps {
 
 export default function Hero({ onScrollTo }: HeroProps) {
   return (
-    <section className="relative bg-dark-bg text-green-900 pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-green-100" id="hero-section">
-      <div className="absolute top-[-20%] left-[-5%] w-[45%] h-[60%] rounded-full bg-green-200/30 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[40%] h-[50%] rounded-full bg-green-100/40 blur-[120px] pointer-events-none" />
+    <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-emerald-700 text-white pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b-2 border-green-600" id="hero-section">
+      <div className="absolute top-[-20%] left-[-5%] w-[45%] h-[60%] rounded-full bg-emerald-400/20 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[40%] h-[50%] rounded-full bg-green-400/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[30%] right-[20%] w-[25%] h-[40%] rounded-full bg-teal-400/10 blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Promo pill */}
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 border border-green-300 text-sm font-semibold text-green-800 mb-6">
-          <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400/20 border border-amber-400/40 text-sm font-semibold text-amber-300 mb-6">
+          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
           Bestel nu en ontvang&nbsp;<strong className="uppercase tracking-wide">3 maanden gratis</strong>
         </motion.div>
 
@@ -26,7 +27,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
           {/* Phone */}
           <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
             className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 z-0">
-            <div className="relative w-[210px] rounded-[2.2rem] border-[5px] border-green-200 shadow-2xl overflow-hidden bg-white">
+            <div className="relative w-[210px] rounded-[2.2rem] border-[5px] border-white/30 shadow-2xl overflow-hidden bg-white">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-green-50 rounded-b-2xl z-20" />
               <div className="px-4 pt-9 pb-4 flex flex-col gap-3 min-h-[340px]">
                 <div className="flex justify-center">
@@ -43,7 +44,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
                   Bekijk prijzen
                 </button>
                 <div className="border-t border-green-100" />
-                <a href="https://wa.me/31600000000" target="_blank" rel="noreferrer" className="flex items-center justify-between text-green-900 hover:opacity-80 transition-opacity group">
+                <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer" className="flex items-center justify-between text-green-900 hover:opacity-80 transition-opacity group">
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-green-100 border border-green-200 flex items-center justify-center">
                       <Phone className="w-3 h-3 text-green-700" />
@@ -64,16 +65,15 @@ export default function Hero({ onScrollTo }: HeroProps) {
 
           {/* Heading */}
           <motion.h1 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative z-10 text-[clamp(4rem,13vw,8rem)] font-extrabold font-display tracking-tighter leading-[1.05] text-green-900 max-w-2xl">
-            Premium IPTV<br />
-            <span className="font-extrabold">voor </span>
-            <span className="italic font-serif font-normal text-green-600">iedereen</span>
+            className="relative z-10 text-[clamp(4rem,13vw,8rem)] font-extrabold font-display tracking-tighter leading-[1.05] text-white max-w-2xl">
+            SwivTV<br />
+            <span className="italic font-serif font-normal text-emerald-300">Premium</span> IPTV
           </motion.h1>
         </div>
 
         {/* Subtitle */}
         <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-green-700 text-base sm:text-lg max-w-lg leading-relaxed mb-6">
+          className="text-green-100 text-base sm:text-lg max-w-lg leading-relaxed mb-6">
           TV kijken zoals het hoort. Pauzeer of annuleer op elk moment.
         </motion.p>
 
@@ -81,12 +81,12 @@ export default function Hero({ onScrollTo }: HeroProps) {
         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-0">
           <button onClick={() => onScrollTo("#pricing-section")}
-            className="px-10 py-5 rounded-full text-white bg-green-600 hover:bg-green-700 transition-all hover:scale-[1.02] shadow-lg text-center cursor-pointer text-lg font-black">
+            className="px-10 py-5 rounded-full text-green-900 bg-amber-400 hover:bg-amber-500 transition-all hover:scale-[1.02] shadow-xl text-center cursor-pointer text-lg font-black">
             Bekijk prijzen
           </button>
           <button onClick={() => onScrollTo("#pricing-section")}
-            className="relative px-10 py-5 rounded-full border-2 border-green-300 bg-green-50 hover:bg-green-100 hover:scale-[1.03] flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer group text-green-800 font-black text-lg overflow-hidden">
-            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-green-200/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            className="relative px-10 py-5 rounded-full border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:scale-[1.03] flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer group text-white font-black text-lg overflow-hidden">
+            <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <Gift className="w-5 h-5 relative" />
             <span className="relative">Claim mijn <span className="underline">3 maanden</span> bonus</span>
             <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
@@ -96,11 +96,11 @@ export default function Hero({ onScrollTo }: HeroProps) {
         {/* Badges */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
           className="flex items-center gap-6 mt-6">
-          <div className="flex items-center gap-2 text-green-700 text-sm">
-            <Play className="w-4 h-4 text-green-600 fill-green-600" /><span>Instant Activering</span>
+          <div className="flex items-center gap-2 text-green-100 text-sm">
+            <Play className="w-4 h-4 text-emerald-300 fill-emerald-300" /><span>Instant Activering</span>
           </div>
-          <div className="flex items-center gap-2 text-green-700 text-sm">
-            <ShieldCheck className="w-4 h-4 text-green-600" /><span>Geen Buffering</span>
+          <div className="flex items-center gap-2 text-green-100 text-sm">
+            <ShieldCheck className="w-4 h-4 text-emerald-300" /><span>Geen Buffering</span>
           </div>
         </motion.div>
       </div>
