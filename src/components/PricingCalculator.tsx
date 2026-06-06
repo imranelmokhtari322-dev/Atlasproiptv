@@ -7,16 +7,16 @@ import { BillingPeriod } from "../types";
 export default function PricingCalculator() {
   const [selectedPeriod, setSelectedPeriod] = useState<BillingPeriod>("12_plus_3_months");
 
-  const [timeLeft, setTimeLeft] = useState({ hours: 18, minutes: 27, seconds: 20 });
+  const getTimeUntilMidnight = () => {
+    const now = new Date();
+    const midnight = new Date(now);
+    midnight.setHours(24, 0, 0, 0);
+    const diff = Math.floor((midnight.getTime() - now.getTime()) / 1000);
+    return { hours: Math.floor(diff / 3600), minutes: Math.floor((diff % 3600) / 60), seconds: diff % 60 };
+  };
+  const [timeLeft, setTimeLeft] = useState(getTimeUntilMidnight);
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        let { hours, minutes, seconds } = prev;
-        if (seconds > 0) { seconds--; }
-        else { seconds = 59; if (minutes > 0) { minutes--; } else { minutes = 59; hours = hours > 0 ? hours - 1 : 23; } }
-        return { hours, minutes, seconds };
-      });
-    }, 1000);
+    const timer = setInterval(() => setTimeLeft(getTimeUntilMidnight()), 1000);
     return () => clearInterval(timer);
   }, []);
   const [selectedDevices, setSelectedDevices] = useState<"1"|"2"|"3"|"4">("1");
