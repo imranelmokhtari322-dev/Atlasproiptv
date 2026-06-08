@@ -118,7 +118,7 @@ export default function PricingCalculator() {
           </div>
         </div>
 
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-10" id="pricing-cards">
           <span className="text-xs uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">SUSCRIPCIONES IPTV</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mb-4">Una tarifa fija, diversión ilimitada</h2>
           <p className="text-green-700 text-sm sm:text-base">Elige tu período y número de dispositivos. Sin costes inesperados.</p>

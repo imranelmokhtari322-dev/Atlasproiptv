@@ -97,7 +97,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
         {/* Price tag */}
         <motion.button
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.35 }}
-          onClick={() => onScrollTo("#pricing-section")}
+          onClick={() => onScrollTo("#pricing-cards")}
           className="mt-4 inline-flex items-center gap-2 cursor-pointer group">
           <span className="text-green-300 text-sm">Desde</span>
           <span className="text-white font-extrabold text-2xl group-hover:text-amber-300 transition-colors">€5,20<span className="text-base font-medium text-green-300">/mes</span></span>
