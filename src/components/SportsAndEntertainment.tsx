@@ -52,15 +52,15 @@ export default function SportsAndEntertainment() {
     <section className="bg-green-50 text-green-900 py-14 border-b border-green-200 overflow-hidden" id="sports-entertainment-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <SectionRow label="NU TRENDING" title="Top Films in Nederland" badge="DIRECT BESCHIKBAAR IN 4K">
+        <SectionRow label="TENDENCIA AHORA EN ESPAÑA" title="Top Películas en España" badge="DISPONIBLE EN 4K">
           <CarouselRow items={TOP_MOVIES} speed="animate-scroll" />
         </SectionRow>
 
-        <SectionRow label="NEDERLANDSE SERIES" title="Top TV Shows in Nederland" badge="EXCLUSIEVE CONTENT">
+        <SectionRow label="SERIES ESPAÑOLAS EN TENDENCIA" title="Top Series Españolas" badge="CONTENIDO EXCLUSIVO ES">
           <CarouselRow items={TOP_SHOWS} speed="animate-scroll-fast" />
         </SectionRow>
 
-        <SectionRow label="INTERNATIONAAL TRENDING" title="Top Internationale Series" badge="WERELDWIJD POPULAIR">
+        <SectionRow label="CINE MUNDIAL EN ESPAÑA" title="Top Películas Internacionales" badge="POPULAR EN ESPAÑA">
           <CarouselRow items={TOP_SHOWS_INTL} speed="animate-scroll-fast" />
         </SectionRow>
 

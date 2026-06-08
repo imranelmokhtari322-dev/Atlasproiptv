@@ -6,22 +6,22 @@ export default function Advantages() {
       icon: <Star className="w-6 h-6 text-amber-500" />,
       bg: "bg-amber-50 border-amber-200",
       iconBg: "bg-amber-100 border-amber-200",
-      title: "Prime Kwaliteit",
-      description: "Premium 4K streamingkwaliteit, wanneer je maar wilt op al je favoriete zenders."
+      title: "Calidad Premium",
+      description: "Calidad de streaming 4K premium, cuando quieras en todos tus canales favoritos."
     },
     {
       icon: <Calendar className="w-6 h-6 text-emerald-600" />,
       bg: "bg-emerald-50 border-emerald-200",
       iconBg: "bg-emerald-100 border-emerald-200",
-      title: "Flexibel",
-      description: "Kies 3, 6 of 12 maanden. Volledig flexibel en aanpasbaar aan jouw wensen."
+      title: "Flexible",
+      description: "Elige 3, 6 o 12 meses. Totalmente flexible y adaptable a tus necesidades."
     },
     {
       icon: <Monitor className="w-6 h-6 text-blue-500" />,
       bg: "bg-blue-50 border-blue-200",
       iconBg: "bg-blue-100 border-blue-200",
-      title: "Alle Apparaten",
-      description: "Werkt op Smart TV, Fire Stick, telefoon, tablet, PC en vrijwel elke box."
+      title: "Todos los Dispositivos",
+      description: "Funciona en Smart TV, Fire Stick, teléfono, tablet, PC y prácticamente cualquier box."
     }
   ];
 
@@ -43,10 +43,10 @@ export default function Advantages() {
 
         <div className="text-center">
           <span className="text-xs uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-6 inline-block">
-            23000+ TEVREDEN KLANTEN
+            23000+ CLIENTES SATISFECHOS
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-green-900 leading-tight">
-            #1 IPTV in Nederland<br />volgens onze klanten
+            El mejor IPTV<br />de España
           </h2>
         </div>
 

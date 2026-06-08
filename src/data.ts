@@ -1,160 +1,153 @@
 import { Channel, SportEvent, MediaItem, Testimonial, FAQItem, PricingSetup } from "./types";
 
 export const CHANNELS_DATA: Channel[] = [
-  // Dutch channels (NL)
-  { id: "npo-1", name: "NPO 1 UHD", category: "NL", playingNow: "NOS Journaal - Live", quality: "4K", logoColor: "bg-red-600" },
-  { id: "npo-2", name: "NPO 2 HD", category: "NL", playingNow: "Tegenlicht", quality: "FHD", logoColor: "bg-orange-500" },
-  { id: "npo-3", name: "NPO 3 HD", category: "NL", playingNow: "Keuringsdienst van Waarde", quality: "FHD", logoColor: "bg-green-600" },
-  { id: "rtl-4", name: "RTL 4 UHD", category: "NL", playingNow: "B&B Vol Liefde", quality: "4K", logoColor: "bg-blue-600" },
-  { id: "rtl-5", name: "RTL 5 HD", category: "NL", playingNow: "112 Vandaag", quality: "FHD", logoColor: "bg-indigo-600" },
-  { id: "rtl-7", name: "RTL 7 HD", category: "NL", playingNow: "Darts World Championship Live", quality: "FHD", logoColor: "bg-yellow-600" },
-  { id: "rtl-8", name: "RTL 8 HD", category: "NL", playingNow: "Hart van Nederland", quality: "FHD", logoColor: "bg-pink-600" },
-  { id: "sbs-6", name: "SBS 6 UHD", category: "NL", playingNow: "Vandaag Inside Live", quality: "4K", logoColor: "bg-red-500" },
-  { id: "veronica", name: "Veronica HD", category: "NL", playingNow: "The Big Bang Theory", quality: "FHD", logoColor: "bg-purple-600" },
-  
-  // Flemish / Belgium (BE)
-  { id: "vtm", name: "VTM HD", category: "BE", playingNow: "The Voice van Vlaanderen", quality: "FHD", logoColor: "bg-orange-600" },
-  { id: "een", name: "VRT 1 HD", category: "BE", playingNow: "Thuis", quality: "FHD", logoColor: "bg-rose-600" },
-  { id: "canvas", name: "VRT Canvas", category: "BE", playingNow: "De Afspraak", quality: "FHD", logoColor: "bg-teal-700" },
-  { id: "play4", name: "Play 4 HD", category: "BE", playingNow: "De Slimste Mens ter Wereld", quality: "FHD", logoColor: "bg-blue-700" },
+  // Movistar+ Premium (ES)
+  { id: "movistar-laliga1",   name: "Movistar LaLiga UHD",        category: "ES",     playingNow: "LaLiga: Real Madrid vs Barcelona",    quality: "4K",  logoColor: "bg-sky-600" },
+  { id: "movistar-laliga2",   name: "Movistar LaLiga 2 HD",       category: "ES",     playingNow: "LaLiga: Atletico vs Sevilla",          quality: "FHD", logoColor: "bg-sky-700" },
+  { id: "movistar-laliga3",   name: "Movistar LaLiga 3 HD",       category: "ES",     playingNow: "LaLiga: Valencia vs Villarreal",       quality: "FHD", logoColor: "bg-sky-800" },
+  { id: "movistar-champions", name: "Movistar Champions 4K",      category: "ES",     playingNow: "UEFA Champions League En Directo",     quality: "4K",  logoColor: "bg-blue-700" },
+  { id: "movistar-estrenos",  name: "Movistar+ Estrenos UHD",     category: "ES",     playingNow: "Estreno: Culpa Tuya",                  quality: "4K",  logoColor: "bg-rose-600" },
+  { id: "movistar-series",    name: "Movistar+ Series HD",        category: "ES",     playingNow: "Berlín: Temporada 2",                  quality: "FHD", logoColor: "bg-rose-700" },
+  { id: "movistar-accion",    name: "Movistar+ Acción HD",        category: "ES",     playingNow: "Cine de Acción Premium",               quality: "FHD", logoColor: "bg-rose-800" },
+  { id: "movistar-cine",      name: "Movistar+ Cine HD",          category: "ES",     playingNow: "La Sociedad de la Nieve",              quality: "FHD", logoColor: "bg-pink-700" },
+  { id: "gol-play",           name: "Gol Play HD",                category: "ES",     playingNow: "LaLiga Highlights & Análisis",         quality: "FHD", logoColor: "bg-green-700" },
 
-  // Sports Channels (SPORT)
-  { id: "ziggo-sport", name: "Ziggo Sport UHD", category: "SPORT", playingNow: "Formule 1: Vrije Training Live", quality: "4K", logoColor: "bg-sky-600", sourceIcon: "/assets/channels/ziggo-sport.png" },
-  { id: "ziggo-sport-select", name: "Ziggo Select HD", category: "SPORT", playingNow: "Rondom de F1", quality: "FHD", logoColor: "bg-cyan-600", sourceIcon: "/assets/channels/ziggo-sport.png" },
-  { id: "espn-1", name: "ESPN 1 UHD", category: "SPORT", playingNow: "Eredivisie: Feyenoord - Ajax Live", quality: "4K", logoColor: "bg-red-700", sourceIcon: "/assets/channels/espn.png" },
-  { id: "espn-2", name: "ESPN 2 HD", category: "SPORT", playingNow: "Keuken Kampioen Divisie", quality: "FHD", logoColor: "bg-red-800", sourceIcon: "/assets/channels/espn.png" },
-  { id: "espn-3", name: "ESPN 3 HD", category: "SPORT", playingNow: "Studio Voetbal", quality: "FHD", logoColor: "bg-red-700", sourceIcon: "/assets/channels/espn.png" },
-  { id: "viaplay-1", name: "Viaplay F1 Ultra", category: "SPORT", playingNow: "Formule 1: Race - Circuit de Monaco Live", quality: "4K", logoColor: "bg-yellow-500", sourceIcon: "/assets/channels/viaplay.png" },
-  { id: "f1tv-pro", name: "F1 TV Pro HD", category: "SPORT", playingNow: "Pit Lane Channel Live", quality: "FHD", logoColor: "bg-red-600", sourceIcon: "/assets/channels/f1.png" },
-  { id: "eurosport-1", name: "Eurosport 1 4K", category: "SPORT", playingNow: "Giro d'Italia - Etappe 12 Live", quality: "4K", logoColor: "bg-teal-600", sourceIcon: "/assets/channels/eurosport.png" },
-  { id: "sky-sports-f1", name: "Sky Sports F1 HD", category: "SPORT", playingNow: "Ted's Notebook", quality: "FHD", logoColor: "bg-red-900", sourceIcon: "/assets/channels/sky-sports.png" },
-  { id: "dazn", name: "DAZN Sports 4K", category: "SPORT", playingNow: "Serie A Match Live", quality: "4K", logoColor: "bg-blue-900", sourceIcon: "/assets/channels/dazn.png" },
+  // Premium Sports (SPORT)
+  { id: "dazn-laliga",        name: "DAZN LaLiga HD",             category: "SPORT",  playingNow: "DAZN LaLiga: Betis vs Athletic",       quality: "FHD", logoColor: "bg-cyan-600" },
+  { id: "dazn-f1",            name: "DAZN F1 4K",                 category: "SPORT",  playingNow: "Fórmula 1: GP de España En Directo",   quality: "4K",  logoColor: "bg-cyan-700" },
+  { id: "dazn-box",           name: "DAZN Box Office UHD",        category: "SPORT",  playingNow: "Boxeo Premium: Velada del Año",        quality: "4K",  logoColor: "bg-cyan-800" },
+  { id: "bein-laliga",        name: "beIN LaLiga HD",             category: "SPORT",  playingNow: "Resumen LaLiga Jornada 28",            quality: "FHD", logoColor: "bg-amber-600" },
+  { id: "eurosport-1",        name: "Eurosport 1 4K",             category: "SPORT",  playingNow: "Vuelta a España - Etapa Reina",        quality: "4K",  logoColor: "bg-teal-600" },
+  { id: "eurosport-2",        name: "Eurosport 2 HD",             category: "SPORT",  playingNow: "Tenis: Masters 1000 Madrid",           quality: "FHD", logoColor: "bg-teal-700" },
+  { id: "movistar-deportes",  name: "Movistar Deportes HD",       category: "SPORT",  playingNow: "Deportes en Directo 24h",              quality: "FHD", logoColor: "bg-sky-900" },
+  { id: "sky-sports-f1",      name: "Sky Sports F1 HD",           category: "SPORT",  playingNow: "F1: Análisis y Clasificación",         quality: "FHD", logoColor: "bg-red-900" },
+  { id: "eleven-sports",      name: "Eleven Sports 4K",           category: "SPORT",  playingNow: "Premier League En Directo",            quality: "4K",  logoColor: "bg-orange-700" },
 
-  // Movies / Streaming VoD (MOVIES)
-  { id: "netflix-uhd", name: "Netflix UHD Hub", category: "MOVIES", playingNow: "Stranger Things S5 (VoD)", quality: "4K", logoColor: "bg-neutral-800" },
-  { id: "hbo-max", name: "HBO Max Cine 4K", category: "MOVIES", playingNow: "House of the Dragon - Ep 8 (VoD)", quality: "4K", logoColor: "bg-violet-900" },
-  { id: "disney-plus", name: "Disney+ 4K Hub", category: "MOVIES", playingNow: "The Mandalorian (VoD)", quality: "4K", logoColor: "bg-blue-900" },
-  { id: "videoland-cine", name: "Videoland Movies", category: "MOVIES", playingNow: "Mocro Maffia: Tatta", quality: "FHD", logoColor: "bg-rose-500" },
+  // Premium Streaming / VOD (MOVIES)
+  { id: "netflix-uhd",        name: "Netflix UHD",                category: "MOVIES", playingNow: "La Casa de Papel: Korea (VoD)",        quality: "4K",  logoColor: "bg-red-600" },
+  { id: "hbo-max",            name: "Max (HBO) 4K",               category: "MOVIES", playingNow: "House of the Dragon T2 (VoD)",         quality: "4K",  logoColor: "bg-violet-800" },
+  { id: "disney-plus",        name: "Disney+ 4K",                 category: "MOVIES", playingNow: "Star Wars: The Acolyte (VoD)",         quality: "4K",  logoColor: "bg-blue-800" },
+  { id: "prime-video",        name: "Amazon Prime Video 4K",      category: "MOVIES", playingNow: "Zorro: Temporada 1 (VoD)",             quality: "4K",  logoColor: "bg-amber-500" },
+  { id: "apple-tv",           name: "Apple TV+ HD",               category: "MOVIES", playingNow: "Severance: Temporada 2 (VoD)",         quality: "FHD", logoColor: "bg-gray-700" },
+  { id: "movistar-plus-vod",  name: "Movistar+ Cine Premiere",    category: "MOVIES", playingNow: "Estrenos Exclusivos Movistar+",        quality: "4K",  logoColor: "bg-rose-600" },
 ];
 
 export const SPORTS_EVENTS: SportEvent[] = [
   {
     id: "sp-1",
-    title: "Formule 1: Grand Prix van Monaco",
-    category: "Formule 1",
-    time: "Zondag om 15:00 Live",
-    channel: "Viaplay 1 / Ziggo Sport UHD",
+    title: "Fórmula 1: Gran Premio de España",
+    category: "Fórmula 1",
+    time: "Domingo a las 15:00 En Directo",
+    channel: "Viaplay 1 / DAZN 4K",
     image: "/assets/sports/formule1.jpg"
   },
   {
     id: "sp-2",
-    title: "Eredivisie: Feyenoord vs Ajax (De Klassieker)",
-    category: "Voetbal",
-    time: "Zondag om 14:30 Live",
-    channel: "ESPN 1 UHD",
+    title: "LaLiga: Real Madrid vs Barcelona (El Clásico)",
+    category: "Fútbol",
+    time: "Domingo a las 21:00 En Directo",
+    channel: "Movistar LaLiga UHD",
     image: "/assets/sports/voetbal.jpg"
   },
   {
     id: "sp-3",
-    title: "Giro d'Italia - Koninginnenrit door de Alpen",
-    category: "Wielrennen",
-    time: "Zaterdag vanaf 12:30 Live",
+    title: "Vuelta a España - Etapa Reina por los Pirineos",
+    category: "Ciclismo",
+    time: "Sábado desde las 12:30 En Directo",
     channel: "Eurosport 1 4K",
     image: "/assets/sports/wielrennen.jpg"
   },
   {
     id: "sp-4",
-    title: "Champions League Finale Live",
-    category: "Voetbal",
-    time: "Volgende week zaterdag 21:00 Live",
-    channel: "RTL 7 UHD / SBS 6 UHD",
+    title: "Final de la Champions League En Directo",
+    category: "Fútbol",
+    time: "El próximo sábado a las 21:00 En Directo",
+    channel: "Antena 3 UHD / DAZN 4K",
     image: "/assets/sports/voetbal.jpg"
   },
   {
     id: "sp-5",
-    title: "Roland Garros - Heren Finale",
-    category: "Tennis",
-    time: "Zondag om 16:00 Live",
+    title: "Roland Garros - Final Masculina",
+    category: "Tenis",
+    time: "Domingo a las 16:00 En Directo",
     channel: "Eurosport 1 & Eurosport 2",
     image: "/assets/sports/tennis.jpg"
   }
 ];
 
 export const TOP_MOVIES: MediaItem[] = [
-  { id: "mov-1",  title: "Joker: Folie à Deux",    type: "movie", image: "/assets/posters/joker-folie-a-deux.jpg",    genre: "Drama / Thriller",      rating: "4.8" },
-  { id: "mov-2",  title: "Beetlejuice Beetlejuice", type: "movie", image: "/assets/posters/beetlejuice-2.jpg",         genre: "Komedie / Fantasy",     rating: "4.5" },
-  { id: "mov-3",  title: "Alien: Romulus",           type: "movie", image: "/assets/posters/alien-romulus.jpg",         genre: "Sci-Fi / Horror",       rating: "4.9" },
-  { id: "mov-4",  title: "Despicable Me 4",           type: "movie", image: "/assets/posters/despicable-me-4.jpg",      genre: "Animatie / Familie",    rating: "4.7" },
-  { id: "mov-5",  title: "Conclave",                  type: "movie", image: "/assets/posters/conclave.jpg",             genre: "Thriller / Mysterie",   rating: "4.6" },
-  { id: "mov-6",  title: "Heretic",                   type: "movie", image: "/assets/posters/heretic.jpg",              genre: "Griezel / Drama",       rating: "4.4" },
-  { id: "mov-7",  title: "Deadpool & Wolverine",      type: "movie", image: "/assets/posters/deadpool-wolverine.jpg",   genre: "Actie / Komedie",       rating: "4.9" },
-  { id: "mov-8",  title: "Dune: Part Two",            type: "movie", image: "/assets/posters/dune-2.jpg",               genre: "Sci-Fi / Avontuur",     rating: "4.8" },
-  { id: "mov-9",  title: "F1 (2025)",                 type: "movie", image: "/assets/posters/f1.jpg",                   genre: "Actie / Sport",         rating: "4.7" },
-  { id: "mov-10", title: "Gladiator II",              type: "movie", image: "/assets/posters/gladiator-2.jpg",          genre: "Actie / Drama",         rating: "4.6" },
-  { id: "mov-11", title: "Inside Out 2",              type: "movie", image: "/assets/posters/inside-out-2.jpg",         genre: "Animatie / Familie",    rating: "4.8" },
-  { id: "mov-12", title: "Moana 2",                   type: "movie", image: "/assets/posters/moana-2.jpg",              genre: "Animatie / Familie",    rating: "4.5" },
-  { id: "mov-13", title: "Red One",                   type: "movie", image: "/assets/posters/red-one.jpg",              genre: "Actie / Komedie",       rating: "4.3" },
-  { id: "mov-14", title: "The Substance",             type: "movie", image: "/assets/posters/the-substance.jpg",        genre: "Horror / Drama",        rating: "4.7" },
-  { id: "mov-15", title: "Wicked",                    type: "movie", image: "/assets/posters/wicked.jpg",               genre: "Musical / Fantasy",     rating: "4.6" },
+  { id: "mov-1", title: "La Sociedad de la Nieve",        type: "movie", image: "/assets/posters/la-sociedad-de-la-nieve.jpg", genre: "Drama / Supervivencia", rating: "4.9" },
+  { id: "mov-2", title: "Culpa Mía",                      type: "movie", image: "/assets/posters/culpa-mia.jpg",               genre: "Romance / Drama",       rating: "4.8" },
+  { id: "mov-3", title: "Culpa Tuya",                     type: "movie", image: "/assets/posters/culpa-tuya.jpg",              genre: "Romance / Thriller",    rating: "4.7" },
+  { id: "mov-4", title: "El 47",                          type: "movie", image: "/assets/posters/el-47.jpg",                   genre: "Drama / Historia",      rating: "4.7" },
+  { id: "mov-5", title: "Robot Dreams",                   type: "movie", image: "/assets/posters/robot-dreams.jpg",            genre: "Animación / Drama",     rating: "4.9" },
+  { id: "mov-6", title: "Nowhere",                        type: "movie", image: "/assets/posters/nowhere.jpg",                 genre: "Thriller / Supervivencia", rating: "4.6" },
+  { id: "mov-7", title: "Campeones",                      type: "movie", image: "/assets/posters/campeones.jpg",               genre: "Comedia / Deporte",     rating: "4.5" },
+  { id: "mov-8", title: "El Maestro que Prometió el Mar", type: "movie", image: "/assets/posters/el-maestro.jpg",              genre: "Drama / Historia",      rating: "4.8" },
 ];
 
 export const TOP_SHOWS: MediaItem[] = [
-  { id: "show-1", title: "Mocro Maffia: Seizoen 6",   type: "show", image: "/assets/tvshows/mocro-maffia.jpg",          genre: "Crime / Drama (NL)",     rating: "4.9" },
-  { id: "show-2", title: "Gooische Vrouwen (Nieuw)",  type: "show", image: "/assets/tvshows/gooische-vrouwen.jpg",      genre: "Drama / Komedie (NL)",   rating: "4.7" },
-  { id: "show-3", title: "LOL: Last One Laughing",    type: "show", image: "/assets/tvshows/lol-last-one-laughing.jpg", genre: "Komedie / Game (NL)",    rating: "4.6" },
-  { id: "show-4", title: "Vandaag Inside Live",       type: "show", image: "/assets/tvshows/vandaag-inside.jpg",        genre: "Talkshow / Actueel (NL)",rating: "4.8" },
-  { id: "show-5", title: "Sprekend Nederland",        type: "show", image: "/assets/tvshows/sprekend-nederland.jpg",    genre: "Docuserie / Cultuur",    rating: "4.5" },
-  { id: "show-6", title: "Pandora",                   type: "show", image: "/assets/tvshows/pandora.jpg",               genre: "Thriller / Drama (NL)",  rating: "4.6" },
-  { id: "show-7", title: "Winter vol Liefde",         type: "show", image: "/assets/tvshows/winter-vol-liefde.jpg",     genre: "Reality / Romance (NL)", rating: "4.4" },
+  { id: "show-1",  title: "La Casa de Papel",          type: "show", image: "/assets/tvshows/la-casa-de-papel.jpg",      genre: "Crimen / Drama (ES)",        rating: "4.9" },
+  { id: "show-2",  title: "Élite",                     type: "show", image: "/assets/tvshows/elite.jpg",                 genre: "Drama / Thriller (ES)",      rating: "4.7" },
+  { id: "show-3",  title: "Berlín",                    type: "show", image: "/assets/tvshows/berlin.jpg",                genre: "Crimen / Acción (ES)",       rating: "4.6" },
+  { id: "show-4",  title: "La Chica de Nieve",         type: "show", image: "/assets/tvshows/la-chica-de-nieve.jpg",     genre: "Thriller / Misterio (ES)",   rating: "4.8" },
+  { id: "show-5",  title: "Sky Rojo",                  type: "show", image: "/assets/tvshows/sky-rojo.jpg",              genre: "Crimen / Acción (ES)",       rating: "4.6" },
+  { id: "show-6",  title: "Valeria",                   type: "show", image: "/assets/tvshows/valeria.jpg",               genre: "Comedia / Romance (ES)",     rating: "4.5" },
+  { id: "show-7",  title: "Entrevías",                 type: "show", image: "/assets/tvshows/entrevias.jpg",             genre: "Drama / Crimen (ES)",        rating: "4.7" },
+  { id: "show-8",  title: "Los Favoritos de Midas",    type: "show", image: "/assets/tvshows/los-favoritos-de-midas.jpg",genre: "Thriller / Drama (ES)",      rating: "4.6" },
+  { id: "show-9",  title: "Vis a Vis",                 type: "show", image: "/assets/tvshows/vis-a-vis.jpg",             genre: "Drama / Thriller (ES)",      rating: "4.7" },
+  { id: "show-10", title: "El Internado: Las Cumbres", type: "show", image: "/assets/tvshows/el-internado.jpg",          genre: "Misterio / Drama (ES)",      rating: "4.6" },
+  { id: "show-11", title: "Intimidad",                 type: "show", image: "/assets/tvshows/intimidad.jpg",             genre: "Drama / Crimen (ES)",        rating: "4.5" },
+  { id: "show-12", title: "Zorro",                     type: "show", image: "/assets/tvshows/zorro.jpg",                 genre: "Aventura / Acción (ES)",     rating: "4.5" },
 ];
 
 export const TOP_SHOWS_INTL: MediaItem[] = [
-  { id: "intl-1", title: "House of the Dragon",  type: "show", image: "/assets/tvshows-intl/house-of-the-dragon.jpg", genre: "Fantasy / Drama",    rating: "4.9" },
-  { id: "intl-2", title: "The Bear",             type: "show", image: "/assets/tvshows-intl/the-bear.jpg",            genre: "Drama / Komedie",    rating: "4.8" },
-  { id: "intl-3", title: "Severance",            type: "show", image: "/assets/tvshows-intl/severance.jpg",           genre: "Sci-Fi / Thriller",  rating: "4.9" },
-  { id: "intl-4", title: "Shogun",               type: "show", image: "/assets/tvshows-intl/shogun.jpg",              genre: "Historisch / Drama", rating: "4.9" },
-  { id: "intl-5", title: "Reacher",              type: "show", image: "/assets/tvshows-intl/reacher.jpg",             genre: "Actie / Thriller",   rating: "4.7" },
-  { id: "intl-6", title: "Squid Game",           type: "show", image: "/assets/tvshows-intl/squid-game.jpg",          genre: "Thriller / Drama",   rating: "4.8" },
-  { id: "intl-7", title: "Stranger Things",      type: "show", image: "/assets/tvshows-intl/stranger-things.jpg",     genre: "Sci-Fi / Horror",    rating: "4.9" },
-  { id: "intl-8", title: "The Last of Us",       type: "show", image: "/assets/tvshows-intl/the-last-of-us.jpg",      genre: "Drama / Horror",     rating: "4.9" },
-  { id: "intl-9", title: "Wednesday",            type: "show", image: "/assets/tvshows-intl/wednesday.jpg",           genre: "Fantasy / Komedie",  rating: "4.7" },
-  { id: "intl-10",title: "Breaking Bad",         type: "show", image: "/assets/tvshows-intl/breaking-bad.jpg",        genre: "Crime / Drama",      rating: "5.0" },
+  { id: "intl-1",  title: "Oppenheimer",            type: "movie", image: "/assets/posters/oppenheimer.jpg",           genre: "Historia / Drama",   rating: "5.0" },
+  { id: "intl-2",  title: "Top Gun: Maverick",       type: "movie", image: "/assets/posters/top-gun-maverick.jpg",      genre: "Acción / Thriller",  rating: "4.9" },
+  { id: "intl-3",  title: "Avatar: El Camino del Agua", type: "movie", image: "/assets/posters/avatar-2.jpg",           genre: "Sci-Fi / Aventura",  rating: "4.7" },
+  { id: "intl-4",  title: "The Dark Knight",         type: "movie", image: "/assets/posters/the-dark-knight.jpg",       genre: "Acción / Crimen",    rating: "5.0" },
+  { id: "intl-5",  title: "Inception",               type: "movie", image: "/assets/posters/inception.jpg",             genre: "Sci-Fi / Thriller",  rating: "4.9" },
+  { id: "intl-6",  title: "Interstellar",             type: "movie", image: "/assets/posters/interstellar.jpg",          genre: "Sci-Fi / Drama",     rating: "4.9" },
+  { id: "intl-7",  title: "Avengers: Endgame",        type: "movie", image: "/assets/posters/avengers-endgame.jpg",      genre: "Acción / Fantasía",  rating: "4.9" },
+  { id: "intl-8",  title: "Titanic",                  type: "movie", image: "/assets/posters/titanic.jpg",               genre: "Romance / Drama",    rating: "4.9" },
+  { id: "intl-9",  title: "Joker",                    type: "movie", image: "/assets/posters/joker.jpg",                 genre: "Drama / Crimen",     rating: "4.8" },
+  { id: "intl-10", title: "Spider-Man: No Way Home",  type: "movie", image: "/assets/posters/spider-man-no-way-home.jpg",genre: "Acción / Aventura",  rating: "4.9" },
 ];
 
 export const WHATSAPP_TESTIMONIALS: Testimonial[] = [
   {
     id: "t-1",
-    name: "Kees van der Velde",
+    name: "Carlos Martínez",
     avatar: "👨‍💻",
-    date: "Gisteren",
-    message: "Hoi SwivTV support, ik wilde even laten weten dat de instelling op mijn LG TV binnen 3 minuten gelukt was. De F1 stream is zéér scherp zonder buffering! 🏎️💨",
+    date: "Ayer",
+    message: "Hola soporte IPTVESPANA, quería deciros que la configuración en mi LG TV tardó menos de 3 minutos. ¡El stream de F1 es muy nítido sin buffering! 🏎️💨",
     replyTime: "12:31",
     isVerified: true
   },
   {
     id: "t-2",
-    name: "Anouk de Bruijn",
+    name: "María López",
     avatar: "👩‍🦰",
-    date: "Vandaag",
-    message: "Super bedankt voor het snelle antwoord gisteravond op WhatsApp. Mijn man is superblij met alle ESPN zenders en ik kijk lekker Videoland films. Zeker een aanrader!",
+    date: "Hoy",
+    message: "Muchísimas gracias por la respuesta rápida anoche en WhatsApp. Mi marido está encantado con todos los canales de LaLiga y yo veo las series españolas. ¡Totalmente recomendado!",
     replyTime: "10:14",
     isVerified: true
   },
   {
     id: "t-3",
-    name: "Jeroen & Lieke",
+    name: "Javier & Ana",
     avatar: "💑",
-    date: "2 dagen geleden",
-    message: "Beste IPTV die ik tot nu toe gehad heb. Geen haperingen tijdens de Champions League gisteravond. En de app op de Firestick werkt razendsnel.",
+    date: "Hace 2 días",
+    message: "El mejor IPTV que he tenido hasta ahora. Sin cortes durante El Clásico anoche. Y la app en el Firestick funciona rapidísimo.",
     replyTime: "18:45",
     isVerified: true
   },
   {
     id: "t-4",
-    name: "Sander Verstappen",
+    name: "Alejandro García",
     avatar: "👱‍♂️",
-    date: "Vorige week",
-    message: "Echt bizar hoeveel 4K kanalen jullie hebben. Zelfs alle Britse Sky Sports zenders draaien zonder vertraging. Nooit meer Ziggo voor mij te duur.",
+    date: "La semana pasada",
+    message: "Es increíble la cantidad de canales 4K que tienen. Incluso todos los canales Sky Sports británicos funcionan sin retraso. Ya nunca más pagaré Movistar, demasiado caro.",
     replyTime: "14:20",
     isVerified: true
   },
@@ -162,8 +155,8 @@ export const WHATSAPP_TESTIMONIALS: Testimonial[] = [
     id: "t-5",
     name: "Mohamed El Kadi",
     avatar: "🧔",
-    date: "3 dagen geleden",
-    message: "Pakket besteld en letterlijk binnen 2 minuten had ik de inloggegevens via mail ontvangen. Super geregeld, support reageert ook meteen.",
+    date: "Hace 3 días",
+    message: "Pedí el paquete y literalmente en 2 minutos recibí las credenciales por correo. Muy bien organizado, el soporte también responde de inmediato.",
     replyTime: "09:05",
     isVerified: true
   }
@@ -172,38 +165,38 @@ export const WHATSAPP_TESTIMONIALS: Testimonial[] = [
 export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-1",
-    question: "Wat is SwivTV IPTV en hoe werkt het precies?",
-    answer: "SwivTV is een premium IPTV provider die televisie via het internet streamt. Je hebt geen schotel of coax-kabels meer nodig. Met ons abonnement krijg je via een handige app op je Smart TV, telefoon, tablet of computer direct toegang tot meer dan 20.000+ live zenders, waaronder alle Nederlandse zenders, sportkanalen (ESPN, Ziggo, Viaplay) en een enorme bibliotheek aan films en series (VOD)."
+    question: "¿Qué es IPTVESPANA y cómo funciona exactamente?",
+    answer: "IPTVESPANA es un proveedor de IPTV premium que transmite televisión a través de internet. Ya no necesitas antena ni cables de coaxial. Con nuestra suscripción obtienes acceso directo a través de una práctica app en tu Smart TV, teléfono, tablet u ordenador a más de 20.000+ canales en directo, incluyendo todos los canales españoles, canales deportivos (ESPN, Movistar+, DAZN) y una enorme biblioteca de películas y series (VOD)."
   },
   {
     id: "faq-2",
-    question: "Is de installatie ingewikkeld en welke apparaten worden ondersteund?",
-    answer: "Nee, de installatie is heel eenvoudig en binnen 5 minuten gepiept! SwivTV werkt op vrijwel elk apparaat: Smart TV's (Samsung, LG, Sony met apps zoals IPTV Smarters, Flix IPTV of IBOTV), Amazon Fire TV Stick, Android TV boxen, Apple TV, smartphones (iOS/Android), tablets, Chromecast en PC. Na bestelling sturen we je een heldere, stap-voor-stap handleiding per e-mail toe, en onze support helpt je direct via WhatsApp als je er niet uitkomt."
+    question: "¿Es complicada la instalación y qué dispositivos son compatibles?",
+    answer: "No, la instalación es muy sencilla y está lista en menos de 5 minutos. IPTVESPANA funciona en prácticamente cualquier dispositivo: Smart TV (Samsung, LG, Sony con apps como IPTV Smarters, Flix IPTV o IBOTV), Amazon Fire TV Stick, cajas Android TV, Apple TV, smartphones (iOS/Android), tablets, Chromecast y PC. Tras la compra te enviamos una guía clara paso a paso por correo, y nuestro soporte te ayuda directamente por WhatsApp si tienes alguna duda."
   },
   {
     id: "faq-3",
-    question: "Zit ik vast aan een langdurig contract of abonnement?",
-    answer: "Absoluut niet. Bij SwivTV hanteren we uitsluitend flexibele pre-paid pakketten. Je kiest zelf of je 1, 3, 6 of 12 maanden wilt kijken. Na deze periode stopt het abonnement automatisch, tenzij je er zelf voor kiest om te verlengen. Geen automatische incasso's en geen stilzwijgende verlengingen. Je zit dus nergens aan vast!"
+    question: "¿Estoy atado a un contrato o suscripción larga?",
+    answer: "En absoluto. En IPTVESPANA utilizamos exclusivamente paquetes de prepago flexibles. Tú eliges si quieres ver 1, 3, 6 o 12 meses. Tras este período la suscripción se detiene automáticamente, a menos que elijas renovar. Sin domiciliaciones automáticas y sin renovaciones silenciosas. ¡No estás atado a nada!"
   },
   {
     id: "faq-4",
-    question: "Hoe snel wordt mijn IPTV account geactiveerd?",
-    answer: "Wij leveren extreem snel! Onze systemen activeren je account direct na ontvangst van de betaling. De inloggegevens (M3U playlist link en Xtream Codes API serverdetails) worden automatisch binnen 3 tot 5 minuten naar je e-mailadres verzonden. Mocht je binnen 10 minuten niks hebben ontvangen, controleer dan je spambox of stuur ons direct een berichtje via WhatsApp!"
+    question: "¿Qué tan rápido se activa mi cuenta IPTV?",
+    answer: "¡Entregamos extremadamente rápido! Nuestros sistemas activan tu cuenta directamente al recibir el pago. Las credenciales (enlace de playlist M3U y detalles de la API Xtream Codes) se envían automáticamente en 3 a 5 minutos a tu dirección de correo. Si no has recibido nada en 10 minutos, comprueba tu carpeta de spam o envíanos un mensaje directo por WhatsApp."
   },
   {
     id: "faq-5",
-    question: "Heb ik speciale internet-snelheden nodig voor buffer-vrij 4K/UHD streamen?",
-    answer: "Om soepel in 4K/UHD te streamen raden we een stabiele internetverbinding aan van ten minste 25 Mbps. Voor HD/FHD streams is 15 Mbps al ruim voldoende. Onze innovatieve servers gebruiken geavanceerde compressietechnologie en H.265 codecs, waardoor de streams stabiel blijven en buffering nagenoeg verleden tijd is."
+    question: "¿Necesito velocidades de internet especiales para hacer streaming 4K/UHD sin buffering?",
+    answer: "Para hacer streaming fluido en 4K/UHD recomendamos una conexión a internet estable de al menos 25 Mbps. Para streams HD/FHD con 15 Mbps es más que suficiente. Nuestros innovadores servidores utilizan tecnología de compresión avanzada y códecs H.265, lo que mantiene los streams estables y hace que el buffering sea prácticamente cosa del pasado."
   },
   {
     id: "faq-6",
-    question: "Kan ik het SwivTV abonnement op meerdere apparaten tegelijkertijd gebruiken?",
-    answer: "Standaard is ons abonnement geschikt voor 1 apparaat tegelijk (1 actieve stream). Mocht je op meerdere TV's of apparaten tegelijk in huis willen kijken, dan kun je in onze prijsconfigurator eenvoudig upgraden naar 2, 3 of 4 schermen voor je gehele huishouden tegen een flinke korting."
+    question: "¿Puedo usar la suscripción IPTVESPANA en varios dispositivos a la vez?",
+    answer: "De forma estándar, nuestra suscripción es para 1 dispositivo a la vez (1 stream activo). Si quieres ver en varias televisiones o dispositivos simultáneamente en casa, puedes actualizar fácilmente a 2, 3 o 4 pantallas en nuestro configurador de precios con un gran descuento."
   },
   {
     id: "faq-7",
-    question: "Welke betaalmethoden ondersteunen jullie?",
-    answer: "Omdat we ons richten op de Nederlandse en Belgische markt bieden we extreem veilige en vertrouwde nationale betaalmethoden aan. Je kunt probleemloos betalen via iDEAL (met alle Nederlandse banken zoals ING, Rabobank, ABN, etc.), Bancontact (voor onze Belgische klanten), PayPal en Creditcard (Visa/Mastercard)."
+    question: "¿Qué métodos de pago aceptáis?",
+    answer: "Ofrecemos métodos de pago muy seguros y de confianza. Puedes pagar cómodamente a través de PayPal, Creditcard (Visa/Mastercard), Bancontact y Transferencia bancaria."
   }
 ];
 
@@ -215,12 +208,12 @@ export const PRICING_MAPPING = {
     originalPricePerMonth: 14.99,
     hasDiscountTag: false,
     features: [
-      "23.000+ Kanalen (NL/BE/Int Live)",
-      "80.000+ Films & Series (VOD)",
-      "4K/UHD & Ultra HDR Beeldkwaliteit",
-      "Stabiele Servers (99.9% Uptime)",
-      "24/7 WhatsApp Premium Support",
-      "M3U playlist & Xtream Codes ondersteund"
+      "23.000+ Canales (ES/Int En Directo)",
+      "80.000+ Películas y Series (VOD)",
+      "4K/UHD & Calidad Ultra HDR",
+      "Servidores Estables (99.9% Uptime)",
+      "Soporte Premium WhatsApp 24/7",
+      "M3U playlist y Xtream Codes compatible"
     ]
   },
   "6_months": {
@@ -229,15 +222,15 @@ export const PRICING_MAPPING = {
     pricePerMonth: 9.99,
     originalPricePerMonth: 14.99,
     hasDiscountTag: true,
-    discountTagText: "POPULAIR -33%",
+    discountTagText: "POPULAR -33%",
     features: [
-      "23.000+ Kanalen (NL/BE/Int Live)",
-      "80.000+ Films & Series (VOD)",
-      "4K/UHD & Ultra HDR Beeldkwaliteit",
-      "Stabiele Servers (99.9% Uptime)",
-      "24/7 WhatsApp Premium Support",
-      "M3U playlist & Xtream Codes ondersteund",
-      "Gratis EPG (TV-Gids)"
+      "23.000+ Canales (ES/Int En Directo)",
+      "80.000+ Películas y Series (VOD)",
+      "4K/UHD & Calidad Ultra HDR",
+      "Servidores Estables (99.9% Uptime)",
+      "Soporte Premium WhatsApp 24/7",
+      "M3U playlist y Xtream Codes compatible",
+      "EPG Gratis (Guía de TV)"
     ]
   },
   "12_months": {
@@ -246,16 +239,16 @@ export const PRICING_MAPPING = {
     pricePerMonth: 7.50,
     originalPricePerMonth: 14.99,
     hasDiscountTag: true,
-    discountTagText: "GROTE BESPARING -50%",
+    discountTagText: "GRAN AHORRO -50%",
     features: [
-      "23.000+ Kanalen (NL/BE/Int Live)",
-      "80.000+ Films & Series (VOD)",
-      "4K/UHD & Ultra HDR Beeldkwaliteit",
-      "Stabiele Servers (99.9% Uptime)",
-      "24/7 WhatsApp Premium Support",
-      "M3U playlist & Xtream Codes ondersteund",
-      "Gratis EPG (TV-Gids)",
-      "Catch-up (Uitzending Gemist)"
+      "23.000+ Canales (ES/Int En Directo)",
+      "80.000+ Películas y Series (VOD)",
+      "4K/UHD & Calidad Ultra HDR",
+      "Servidores Estables (99.9% Uptime)",
+      "Soporte Premium WhatsApp 24/7",
+      "M3U playlist y Xtream Codes compatible",
+      "EPG Gratis (Guía de TV)",
+      "Catch-up (TV a la carta)"
     ]
   },
   "12_plus_3_months": {
@@ -264,17 +257,17 @@ export const PRICING_MAPPING = {
     pricePerMonth: 5.20,
     originalPricePerMonth: 14.99,
     hasDiscountTag: true,
-    discountTagText: "TIJDELIJKE ACTIE: 12+3 MAANDEN GRATIS",
+    discountTagText: "OFERTA TEMPORAL: 12+3 MESES GRATIS",
     features: [
-      "15 MAANDEN TOTAAL (12 kopen, 3 gratis)",
-      "23.000+ Kanalen (NL/BE/Int Live)",
-      "80.000+ Films & Series (VOD)",
-      "4K/UHD & Ultra HDR Beeldkwaliteit",
-      "Stabiele Servers (99.9% Uptime)",
-      "24/7 WhatsApp Premium Support",
-      "M3U playlist & Xtream Codes",
-      "Gratis EPG (TV-Gids)",
-      "Full Catch-up & Live Pause"
+      "15 MESES EN TOTAL (compra 12, 3 gratis)",
+      "23.000+ Canales (ES/Int En Directo)",
+      "80.000+ Películas y Series (VOD)",
+      "4K/UHD & Calidad Ultra HDR",
+      "Servidores Estables (99.9% Uptime)",
+      "Soporte Premium WhatsApp 24/7",
+      "M3U playlist y Xtream Codes",
+      "EPG Gratis (Guía de TV)",
+      "Catch-up Completo y Pausa en Directo"
     ]
   }
 };

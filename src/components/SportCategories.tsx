@@ -1,14 +1,14 @@
 const sports = [
-  { name: "Voetbal",    sub: "EREDIVISIE, CHAMPIONS LEAGUE", img: "/assets/sports/voetbal.jpg"    },
-  { name: "Hockey",     sub: "HOOFDKLASSE",                  img: "/assets/sports/hockey.jpg"     },
-  { name: "Schaatsen",  sub: "WORLD CUP, NK",                img: "/assets/sports/schaatsen.jpg"  },
-  { name: "Wielrennen", sub: "TOUR, GIRO, VUELTA",           img: "/assets/sports/wielrennen.jpg" },
-  { name: "Tennis",     sub: "GRAND SLAMS",                  img: "/assets/sports/tennis.jpg"     },
-  { name: "Padel",      sub: "PADEL PREMIUM",                img: "/assets/sports/padel.jpg"      },
-  { name: "Formule 1",  sub: "F1, F2, F3",                   img: "/assets/sports/formule1.jpg"   },
-  { name: "Volleybal",  sub: "EREDIVISIE, EK",               img: "/assets/sports/volleybal.jpg"  },
-  { name: "Golf",       sub: "PGA TOUR, MASTERS",            img: "/assets/sports/golf.jpg"       },
-  { name: "Zwemmen",    sub: "WK, EK, NK",                   img: "/assets/sports/zwemmen.jpg"    },
+  { name: "Fútbol",    sub: "LALIGA, CHAMPIONS LEAGUE", img: "/assets/sports/voetbal.jpg"    },
+  { name: "Baloncesto", sub: "ACB, NBA, EUROLIGA",      img: "/assets/sports/hockey.jpg"     },
+  { name: "Motociclismo", sub: "MOTOGP, SUPERBIKE",     img: "/assets/sports/schaatsen.jpg"  },
+  { name: "Ciclismo",  sub: "TOUR, GIRO, VUELTA",       img: "/assets/sports/wielrennen.jpg" },
+  { name: "Tenis",     sub: "GRAND SLAMS",              img: "/assets/sports/tennis.jpg"     },
+  { name: "Padel",     sub: "PADEL PREMIUM",            img: "/assets/sports/padel.jpg"      },
+  { name: "Fórmula 1", sub: "F1, F2, F3",               img: "/assets/sports/formule1.jpg"   },
+  { name: "Balonmano", sub: "LIGA ASOBAL, EHF",         img: "/assets/sports/volleybal.jpg"  },
+  { name: "Golf",      sub: "PGA TOUR, MASTERS",        img: "/assets/sports/golf.jpg"       },
+  { name: "Natación",  sub: "MUNDIAL, OLIMPIADAS",      img: "/assets/sports/zwemmen.jpg"    },
 ];
 
 export default function SportCategories() {
@@ -16,8 +16,8 @@ export default function SportCategories() {
     <section className="py-16 border-b-2 border-green-700 overflow-hidden bg-gradient-to-br from-green-900 to-emerald-800" id="sport-categories-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <span className="text-[10px] uppercase font-sans text-emerald-400 font-bold tracking-widest block mb-2">VAN EREDIVISIE TOT FORMULE 1</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white">Alle Sporten Live in 4K</h2>
+          <span className="text-[10px] uppercase font-sans text-emerald-400 font-bold tracking-widest block mb-2">DE LALIGA A LA FÓRMULA 1</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white">Todos los Deportes En Directo en 4K</h2>
         </div>
         <div className="w-full overflow-hidden relative">
           <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-green-900 to-transparent z-10 pointer-events-none" />

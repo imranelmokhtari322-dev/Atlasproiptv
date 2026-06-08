@@ -1,17 +1,22 @@
 export default function ChannelSearch() {
   const channelLogos = [
-    { name: "F1 TV",       logo: "/assets/channels/f1.png",          invert: false },
-    { name: "ESPN",        logo: "/assets/channels/espn.png",         invert: false },
-    { name: "Viaplay",     logo: "/assets/channels/viaplay.png",      invert: false },
-    { name: "Ziggo Sport", logo: "/assets/channels/ziggo-sport.png",  invert: false },
-    { name: "Eurosport",   logo: "/assets/channels/eurosport.png",    invert: false },
-    { name: "Sky Sport",   logo: "/assets/channels/sky-sports.png",   invert: false },
-    { name: "DAZN",        logo: "/assets/channels/dazn.png",         invert: false },
+    { name: "Movistar Plus+",           logo: "/assets/channels/movistar-plus.svg",     invert: false },
+    { name: "LaLiga TV por M+",        logo: "/assets/channels/laliga-tv.svg",          invert: false },
+    { name: "Liga de Campeones por M+",logo: "/assets/channels/liga-campeones.svg",     invert: false },
+    { name: "Estrenos por M+",         logo: "/assets/channels/estrenos-movistar.svg",  invert: false },
+    { name: "DAZN LaLiga",             logo: "/assets/channels/dazn-laliga.svg",        invert: false },
+    { name: "Star Channel",            logo: "/assets/channels/star-channel.svg",       invert: false },
+    { name: "Warner TV",               logo: "/assets/channels/warner-tv.svg",          invert: false },
+    { name: "AXN",                     logo: "/assets/channels/axn.svg",                invert: false },
+    { name: "Calle 13",                logo: "/assets/channels/calle13.svg",            invert: false },
+    { name: "Canal Hollywood",         logo: "/assets/channels/canal-hollywood.svg",    invert: false },
+    { name: "National Geographic",     logo: "/assets/channels/national-geographic.svg",invert: false },
+    { name: "Syfy",                    logo: "/assets/channels/syfy.svg",               invert: false },
   ];
 
   const doubled = [...channelLogos, ...channelLogos];
 
-  const bigNames = ["CHAMPIONS LEAGUE","FORMULE 1","NPO","RTL","SBS","NETFLIX","ZIGGO SPORT","ESPN","VIAPLAY","EUROSPORT","HBO MAX","DISNEY+","VIDEOLAND","SKY SPORTS","DAZN"];
+  const bigNames = ["MOVISTAR PLUS+","LALIGA TV","LIGA DE CAMPEONES","DAZN LALIGA","ESTRENOS M+","STAR CHANNEL","WARNER TV","AXN","CALLE 13","CANAL HOLLYWOOD","NATIONAL GEOGRAPHIC","SYFY"];
   const doubledNames = [...bigNames, ...bigNames];
 
   return (
@@ -30,8 +35,8 @@ export default function ChannelSearch() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest block mb-1">LIVE TV</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-green-900">Al je favoriete zenders</h2>
+          <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest block mb-1">TV EN DIRECTO</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-green-900">Todos tus canales favoritos</h2>
         </div>
 
         {/* Auto-scrolling logos */}

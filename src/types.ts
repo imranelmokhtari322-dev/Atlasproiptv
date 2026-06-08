@@ -1,7 +1,7 @@
 export interface Channel {
   id: string;
   name: string;
-  category: "NL" | "BE" | "SPORT" | "MOVIES" | "INT";
+  category: "NL" | "BE" | "ES" | "SPORT" | "MOVIES" | "INT";
   sourceIcon?: string;
   playingNow: string;
   quality: "4K" | "FHD" | "HD";
@@ -11,7 +11,7 @@ export interface Channel {
 export interface SportEvent {
   id: string;
   title: string;
-  category: "Voetbal" | "Formule 1" | "Tennis" | "Wielrennen" | "Snelheid" | "Overig";
+  category: "Voetbal" | "Fútbol" | "Formule 1" | "Fórmula 1" | "Tennis" | "Tenis" | "Wielrennen" | "Ciclismo" | "Snelheid" | "Overig";
   time: string;
   channel: string;
   image: string;

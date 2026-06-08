@@ -25,8 +25,8 @@ export default function PricingCalculator() {
   const [email, setEmail] = useState("");
   const [targetDevice, setTargetDevice] = useState("Smart TV (IPTV Smarters / Flix)");
   const [paymentMethod, setPaymentMethod] = useState("ideal");
-  const [selectedBank, setSelectedBank] = useState("rabobank");
-  const [generatedLine, setGeneratedLine] = useState({ username:"", password:"", m3uUrl:"", host:"http://line.swivtv.net:80" });
+  const [selectedBank, setSelectedBank] = useState("santander");
+  const [generatedLine, setGeneratedLine] = useState({ username:"", password:"", m3uUrl:"", host:"http://line.iptvespana.net:80" });
 
   const periodInfo = PRICING_MAPPING[selectedPeriod];
   const deviceAddons = { "1":0,"2":2.25,"3":3.75,"4":4.95 };
@@ -37,8 +37,8 @@ export default function PricingCalculator() {
   const handleProcessPayment = (e: FormEvent) => {
     e.preventDefault(); if (!email) return;
     setCheckoutStep("processing");
-    const user = `swiv_${Math.random().toString(36).substring(2,8)}`;
-    setGeneratedLine({ username:user, password:Math.random().toString(36).substring(2,10), m3uUrl:`http://line.swivtv.net:80/get.php?auth=swivtv_${user}&output=ts`, host:"http://line.swivtv.net:80" });
+    const user = `iptv_${Math.random().toString(36).substring(2,8)}`;
+    setGeneratedLine({ username:user, password:Math.random().toString(36).substring(2,10), m3uUrl:`http://line.iptvespana.net:80/get.php?auth=iptvespana_${user}&output=ts`, host:"http://line.iptvespana.net:80" });
     setTimeout(() => setCheckoutStep("success"), 2800);
   };
 
@@ -58,14 +58,14 @@ export default function PricingCalculator() {
   const normalPrice = normalPrices[selectedPeriod][selectedDevices];
 
   const periods = [
-    { id:"3_months" as BillingPeriod, label:"3 Maanden", sub:"€11,99/maand" },
-    { id:"6_months" as BillingPeriod, label:"6 Maanden", sub:"€9,99/maand" },
-    { id:"12_plus_3_months" as BillingPeriod, label:"12+3 Maanden", sub:"€5,20/maand!", bonus:true },
+    { id:"3_months" as BillingPeriod, label:"3 Meses", sub:"€11,99/mes" },
+    { id:"6_months" as BillingPeriod, label:"6 Meses", sub:"€9,99/mes" },
+    { id:"12_plus_3_months" as BillingPeriod, label:"12+3 Meses", sub:"€5,20/mes!", bonus:true },
   ];
 
   const openWhatsApp = (plan: "VIP" | "Basis", price: number) => {
     const periodLabel = periods.find(p => p.id === selectedPeriod)?.label ?? selectedPeriod;
-    const msg = `Hallo, ik wil het *${plan === "VIP" ? "✦ Premium VIP+" : "Basis"}* pakket bestellen. ${periodLabel}, ${selectedDevices} scherm(en), €${price.toFixed(2).replace(".", ",")}.`;
+    const msg = `Hola, quiero pedir el paquete *${plan === "VIP" ? "✦ Premium VIP+" : "Básico"}*. ${periodLabel}, ${selectedDevices} pantalla(s), €${price.toFixed(2).replace(".", ",")}.`;
     window.open(`https://wa.me/447449708976?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 
@@ -74,16 +74,16 @@ export default function PricingCalculator() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase font-sans text-emerald-300 font-bold tracking-widest bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-6 inline-block">PRIJZEN</span>
+          <span className="text-xs uppercase font-sans text-emerald-300 font-bold tracking-widest bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-6 inline-block">PRECIOS</span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white leading-tight mb-10">
-            Eén abonnement,{" "}
-            <span className="italic font-serif font-normal text-emerald-300">eindeloze</span>
-            <br />mogelijkheden
+            Una suscripción,{" "}
+            <span className="italic font-serif font-normal text-emerald-300">posibilidades</span>
+            <br />infinitas
           </h2>
 
           <p className="text-green-100 text-base sm:text-lg font-medium mb-8 leading-relaxed">
-            Het is <span className="text-white font-bold italic">"je gaat nooit meer terug"</span> beter.<br />
-            <span className="text-green-200 text-sm sm:text-base font-normal">SwivTV vervangt dure Ziggo-pakketten en meerdere streamingdiensten voor één vaste prijs.</span>
+            Es <span className="text-white font-bold italic">"nunca volverás atrás"</span> mejor.<br />
+            <span className="text-green-200 text-sm sm:text-base font-normal">IPTVESPANA reemplaza paquetes caros y múltiples servicios de streaming por un precio fijo.</span>
           </p>
 
           {/* Countdown timer */}
@@ -91,14 +91,14 @@ export default function PricingCalculator() {
             <div className="flex items-center gap-2 justify-center mb-5">
               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               <span className="text-[11px] font-bold uppercase tracking-widest text-green-200 font-sans">
-                Beperkte aanbieding eindigt om middernacht
+                Oferta limitada termina a medianoche
               </span>
             </div>
             <div className="flex items-center justify-center gap-4">
               {[
-                { val: timeLeft.hours,   label: "UREN"     },
-                { val: timeLeft.minutes, label: "MINUTEN"  },
-                { val: timeLeft.seconds, label: "SECONDEN" },
+                { val: timeLeft.hours,   label: "HORAS"    },
+                { val: timeLeft.minutes, label: "MINUTOS"  },
+                { val: timeLeft.seconds, label: "SEGUNDOS" },
               ].map((unit, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="text-center">
@@ -117,9 +117,9 @@ export default function PricingCalculator() {
         </div>
 
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-xs uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">IPTV ABONNEMENTEN</span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mb-4">Eén vast tarief, onbeperkt plezier</h2>
-          <p className="text-green-700 text-sm sm:text-base">Kies je periode en aantal apparaten. Geen onverwachte kosten.</p>
+          <span className="text-xs uppercase font-sans text-green-600 font-bold tracking-widest bg-green-50 border border-green-200 px-3 py-1 rounded-full mb-3 inline-block">SUSCRIPCIONES IPTV</span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mb-4">Una tarifa fija, diversión ilimitada</h2>
+          <p className="text-green-700 text-sm sm:text-base">Elige tu período y número de dispositivos. Sin costes inesperados.</p>
         </div>
 
         <div className="max-w-4xl mx-auto bg-white border border-green-100 rounded-2xl p-6 sm:p-8 shadow-md mb-12">
@@ -128,7 +128,7 @@ export default function PricingCalculator() {
 
               {/* Period tabs */}
               <div>
-                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-sans">1. Kies de abonnementsduur:</label>
+                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-sans">1. Elige la duración de la suscripción:</label>
                 <div className="flex gap-2">
                   {periods.map((p) => (
                     <button key={p.id} onClick={() => setSelectedPeriod(p.id)}
@@ -152,7 +152,7 @@ export default function PricingCalculator() {
 
               {/* Device grid */}
               <div>
-                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-sans">2. Aantal gelijktijdige schermen:</label>
+                <label className="text-xs font-bold text-green-600 uppercase tracking-widest block mb-3 font-sans">2. Número de pantallas simultáneas:</label>
                 <div className="grid grid-cols-2 gap-2">
                   {["1","2","3","4"].map((dev) => (
                     <button key={dev} onClick={() => setSelectedDevices(dev as "1"|"2"|"3"|"4")}
@@ -165,7 +165,7 @@ export default function PricingCalculator() {
                         <rect x="2" y="3" width="20" height="14" rx="2"/>
                         <path d="M8 21h8M12 17v4"/>
                       </svg>
-                      {dev} {Number(dev) > 1 ? "Apparaten" : "Apparaat"}
+                      {dev} {Number(dev) > 1 ? "Dispositivos" : "Dispositivo"}
                     </button>
                   ))}
                 </div>
@@ -179,9 +179,9 @@ export default function PricingCalculator() {
 
           {/* Premium VIP */}
           <div className="relative rounded-2xl border border-amber-300 bg-gradient-to-b from-amber-400 to-amber-300 p-8 min-h-[560px] flex flex-col shadow-xl">
-            <div className="flex justify-center mb-4"><span className="bg-green-900 text-amber-400 text-[10px] font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest shadow-md">BESTE DEAL</span></div>
+            <div className="flex justify-center mb-4"><span className="bg-green-900 text-amber-400 text-[10px] font-extrabold px-5 py-1.5 rounded-full uppercase tracking-widest shadow-md">MEJOR OFERTA</span></div>
             <h3 className="text-3xl font-extrabold font-display text-green-900 mb-1">✦ PREMIUM VIP +</h3>
-            <p className="text-green-800/70 text-xs font-sans uppercase tracking-widest mb-4">12+3 MAANDEN</p>
+            <p className="text-green-800/70 text-xs font-sans uppercase tracking-widest mb-4">12+3 MESES</p>
             <div className="mb-4">
               <span onClick={() => openWhatsApp("VIP", vipPrice)}
                 className="text-5xl font-black text-green-900 font-display cursor-pointer hover:text-green-700 transition-colors">
@@ -190,24 +190,24 @@ export default function PricingCalculator() {
             </div>
             <p className="text-green-800/70 text-xs mb-5 flex items-center gap-1">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              1 apparaat inbegrepen
+              1 dispositivo incluido
             </p>
 
             <div className="flex flex-col gap-2.5 mb-6 flex-1">
               {[
                 "SD/HD/FULL HD/4K/8K/HDR-VR",
-                "+80.000 Kanalen + Netflix",
-                "RTL, NPO, ZIGGO, SBS, ESPN, Viaplay, VTM",
-                "+200.000 Films & Series",
-                "Dagelijkse Updates",
-                "Alle Sport PPV Events",
-                "VIP 24/7 Support",
-                "Enterprise Anti-Freeze PRO",
-                "Persoonlijke VIP Manager",
-                "Alle Apparaten",
-                "VPN Inbegrepen",
-                "Exclusieve VIP Content",
-                "Videoland, Netflix, Amazon, HBO, Apple TV, Hulu",
+                "+80.000 Canales + Netflix",
+                "Movistar+, DAZN, LaLiga TV, ESPN, Viaplay",
+                "+200.000 Películas y Series",
+                "Actualizaciones Diarias",
+                "Todos los Eventos Deportivos PPV",
+                "Soporte VIP 24/7",
+                "Anti-Buffering Empresarial PRO",
+                "Gestor VIP Personal",
+                "Todos los Dispositivos",
+                "VPN Incluida",
+                "Contenido VIP Exclusivo",
+                "Movistar+, Netflix, Amazon, HBO, Apple TV, Hulu",
               ].map((feature) => (
                 <div key={feature} className="flex items-start gap-2.5 text-xs text-green-900">
                   <div className="w-4 h-4 rounded-full bg-green-900/15 border border-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -222,14 +222,14 @@ export default function PricingCalculator() {
 
             <button onClick={() => openWhatsApp("VIP", vipPrice)}
               className="w-full py-3.5 rounded-xl bg-green-900 hover:bg-green-800 text-amber-400 font-bold text-sm uppercase tracking-wide transition-all cursor-pointer mt-auto shadow-lg">
-              Bestel Nu &rarr;
+              Pedir Ahora &rarr;
             </button>
           </div>
 
-          {/* Basis */}
+          {/* Básico */}
           <div className="relative rounded-2xl border border-green-200 bg-gradient-to-b from-green-50 to-white p-8 min-h-[560px] flex flex-col shadow-sm">
-            <h3 className="text-3xl font-extrabold font-display text-green-900 mb-1 mt-2">Basis</h3>
-            <p className="text-green-600 text-xs font-sans uppercase tracking-widest mb-4">12 MAANDEN</p>
+            <h3 className="text-3xl font-extrabold font-display text-green-900 mb-1 mt-2">Básico</h3>
+            <p className="text-green-600 text-xs font-sans uppercase tracking-widest mb-4">12 MESES</p>
             <div className="mb-4">
               <span onClick={() => openWhatsApp("Basis", normalPrice)}
                 className="text-5xl font-black text-green-900 cursor-pointer hover:text-green-700 transition-colors" style={{ fontFamily: "'Sour Gummy', cursive" }}>
@@ -238,22 +238,22 @@ export default function PricingCalculator() {
             </div>
             <p className="text-green-500 text-xs mb-5 flex items-center gap-1">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              1 apparaat inbegrepen
+              1 dispositivo incluido
             </p>
 
             <div className="flex flex-col gap-2.5 mb-6 flex-1">
               {[
-                "SD/HD/FULL HD Kwaliteit",
-                "+50.000 Kanalen + Netflix",
-                "RTL, NPO, ZIGGO, SBS, ESPN, Viaplay",
-                "+140.000 Films & Series",
-                "Wekelijkse Updates",
-                "24/7 Support NL & BE",
-                "100% Anoniem",
-                "AntiFreeze Technologie",
-                "Alle Apparaten",
-                "VPN Inbegrepen",
-                "Exclusieve NL & BE Content",
+                "Calidad SD/HD/FULL HD",
+                "+50.000 Canales + Netflix",
+                "Movistar+, DAZN, LaLiga TV, SBS, ESPN, Viaplay",
+                "+140.000 Películas y Series",
+                "Actualizaciones Semanales",
+                "Soporte 24/7",
+                "100% Anónimo",
+                "Tecnología AntiFreeze",
+                "Todos los Dispositivos",
+                "VPN Incluida",
+                "Contenido Exclusivo",
                 "Netflix, Amazon, HBO, Apple TV, Hulu",
               ].map((feature) => (
                 <div key={feature} className="flex items-start gap-2.5 text-xs text-green-800">
@@ -269,7 +269,7 @@ export default function PricingCalculator() {
 
             <button onClick={() => openWhatsApp("Basis", normalPrice)}
               className="w-full py-3.5 rounded-xl bg-green-50 hover:bg-green-100 border border-green-300 text-green-800 font-bold text-sm uppercase tracking-wide transition-all cursor-pointer mt-auto">
-              Bestel Nu &rarr;
+              Pedir Ahora &rarr;
             </button>
           </div>
         </div>
@@ -282,28 +282,28 @@ export default function PricingCalculator() {
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-green-950/70 backdrop-blur-md">
             <motion.div initial={{opacity:0,scale:0.95}} animate={{opacity:1,scale:1}} exit={{opacity:0,scale:0.95}}
               className="relative w-full max-w-lg bg-white border border-green-200 rounded-2xl shadow-2xl p-6 sm:p-8 text-green-900 max-h-[90vh] overflow-y-auto">
-              <button onClick={() => setCheckoutModalOpen(false)} className="absolute top-4 right-4 px-3 py-1 rounded-lg bg-green-50 text-green-600 hover:text-green-900 text-xs font-bold">Sluiten</button>
+              <button onClick={() => setCheckoutModalOpen(false)} className="absolute top-4 right-4 px-3 py-1 rounded-lg bg-green-50 text-green-600 hover:text-green-900 text-xs font-bold">Cerrar</button>
 
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-green-100 text-xs text-green-500 font-sans">
                 {["details","payment","processing","success"].map((step,i)=>(
                   <span key={step} className={checkoutStep===step?"text-green-900 font-bold":"text-green-400"}>
-                    {i+1}. {["Account","Betaling","Activatie","Voltooid"][i]}
+                    {i+1}. {["Cuenta","Pago","Activación","Completado"][i]}
                   </span>
                 ))}
               </div>
 
               {checkoutStep==="details" && (
                 <div className="text-left">
-                  <h3 className="text-lg font-bold text-green-900 mb-2">Configureer je Account</h3>
-                  <p className="text-xs text-green-600 mb-5">We sturen je inloggegevens direct naar je e-mail.</p>
+                  <h3 className="text-lg font-bold text-green-900 mb-2">Configura tu Cuenta</h3>
+                  <p className="text-xs text-green-600 mb-5">Te enviamos tus credenciales directamente a tu correo.</p>
                   <div className="flex flex-col gap-4">
                     <div>
-                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-sans">E-mailadres:</label>
-                      <input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="jouw@email.nl"
+                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-sans">Correo electrónico:</label>
+                      <input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="tu@correo.es"
                         className="w-full bg-green-50 border border-green-200 rounded-xl py-3 px-4 text-sm text-green-900 placeholder-green-400 focus:outline-none focus:border-green-400"/>
                     </div>
                     <div>
-                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-sans">Apparaat:</label>
+                      <label className="text-xs font-bold text-green-600 block mb-1.5 font-sans">Dispositivo:</label>
                       <select value={targetDevice} onChange={e=>setTargetDevice(e.target.value)} className="w-full bg-green-50 border border-green-200 rounded-xl py-3 px-4 text-sm text-green-900 focus:outline-none">
                         <option>Smart TV (IPTV Smarters / Flix)</option>
                         <option>Amazon Firestick (TiviMate)</option>
@@ -313,11 +313,11 @@ export default function PricingCalculator() {
                       </select>
                     </div>
                     <div className="p-3.5 rounded-xl bg-green-50 border border-green-200 text-xs text-green-600">
-                      <span className="font-bold text-green-900">Pakket:</span> {totalMonths} Maanden, {selectedDevices} Scherm(en) — <strong className="text-green-900">€{calculatedTotalPrice.toFixed(2)}</strong>
+                      <span className="font-bold text-green-900">Paquete:</span> {totalMonths} Meses, {selectedDevices} Pantalla(s) — <strong className="text-green-900">€{calculatedTotalPrice.toFixed(2)}</strong>
                     </div>
-                    <button onClick={() => { if(email.includes("@")){setCheckoutStep("payment");}else{alert("Vul een geldig e-mailadres in!");}}}
+                    <button onClick={() => { if(email.includes("@")){setCheckoutStep("payment");}else{alert("¡Introduce un correo electrónico válido!");}}}
                       className="w-full mt-4 py-3.5 rounded-xl bg-green-600 text-white hover:bg-green-700 font-bold text-sm text-center transition-colors">
-                      Ga naar betalen &rarr;
+                      Ir al pago &rarr;
                     </button>
                   </div>
                 </div>
@@ -325,9 +325,9 @@ export default function PricingCalculator() {
 
               {checkoutStep==="payment" && (
                 <div className="text-left">
-                  <h3 className="text-lg font-bold text-green-900 mb-2">Kies betaalmethode</h3>
+                  <h3 className="text-lg font-bold text-green-900 mb-2">Elige método de pago</h3>
                   <form onSubmit={handleProcessPayment} className="flex flex-col gap-4 mt-5">
-                    {[{id:"ideal",label:"iDEAL (Nederland)",badge:"Populair"},{id:"bancontact",label:"Bancontact (België)",badge:""},{id:"paypal",label:"PayPal",badge:""},{id:"cc",label:"Creditcard (Visa/MC)",badge:""}].map(pm=>(
+                    {[{id:"ideal",label:"iDEAL (Países Bajos)",badge:"Popular"},{id:"bancontact",label:"Bancontact (Bélgica)",badge:""},{id:"paypal",label:"PayPal",badge:""},{id:"cc",label:"Creditcard (Visa/MC)",badge:""}].map(pm=>(
                       <div key={pm.id} onClick={()=>setPaymentMethod(pm.id)}
                         className={`p-4 rounded-xl border cursor-pointer transition-all ${paymentMethod===pm.id?"bg-green-50 border-green-400":"bg-white border-green-100 hover:border-green-200"}`}>
                         <div className="flex items-center justify-between">
@@ -341,14 +341,14 @@ export default function PricingCalculator() {
                         </div>
                         {pm.id==="ideal"&&paymentMethod==="ideal"&&(
                           <select value={selectedBank} onChange={e=>setSelectedBank(e.target.value)} className="mt-3 w-full bg-white border border-green-200 rounded-lg py-2 px-3 text-xs text-green-900">
-                            {["rabobank","ing","abn","sns","bunq","revolut"].map(b=><option key={b} value={b}>{b.charAt(0).toUpperCase()+b.slice(1)}</option>)}
+                            {["santander","bbva","caixabank","sabadell","bankinter","revolut"].map(b=><option key={b} value={b}>{b.charAt(0).toUpperCase()+b.slice(1)}</option>)}
                           </select>
                         )}
                       </div>
                     ))}
                     <div className="flex gap-2">
-                      <button type="button" onClick={()=>setCheckoutStep("details")} className="w-1/3 py-3.5 border border-green-200 rounded-xl text-green-600 font-bold text-sm">Terug</button>
-                      <button type="submit" className="w-2/3 py-3.5 rounded-xl bg-green-600 text-white hover:bg-green-700 font-bold text-sm transition-colors">Voldoe €{calculatedTotalPrice.toFixed(2)}</button>
+                      <button type="button" onClick={()=>setCheckoutStep("details")} className="w-1/3 py-3.5 border border-green-200 rounded-xl text-green-600 font-bold text-sm">Volver</button>
+                      <button type="submit" className="w-2/3 py-3.5 rounded-xl bg-green-600 text-white hover:bg-green-700 font-bold text-sm transition-colors">Pagar €{calculatedTotalPrice.toFixed(2)}</button>
                     </div>
                   </form>
                 </div>
@@ -357,8 +357,8 @@ export default function PricingCalculator() {
               {checkoutStep==="processing" && (
                 <div className="py-8 flex flex-col items-center justify-center text-center">
                   <RefreshCw className="w-12 h-12 text-green-600 animate-spin mb-4"/>
-                  <h3 className="text-lg font-bold text-green-900 mb-2">Verwerken...</h3>
-                  <p className="text-xs text-green-600 max-w-sm">Verbinding met bank. We activeren je IPTV lijn.</p>
+                  <h3 className="text-lg font-bold text-green-900 mb-2">Procesando...</h3>
+                  <p className="text-xs text-green-600 max-w-sm">Conectando con el banco. Activamos tu línea IPTV.</p>
                 </div>
               )}
 
@@ -367,10 +367,10 @@ export default function PricingCalculator() {
                   <div className="w-12 h-12 rounded-full bg-green-100 border border-green-300 text-green-600 flex items-center justify-center mb-4 mx-auto">
                     <Check className="w-6 h-6 stroke-[3]"/>
                   </div>
-                  <h3 className="text-xl font-bold text-green-900 text-center mb-1">Betaling Geslaagd!</h3>
-                  <p className="text-xs text-green-600 text-center mb-5">Jouw SwivTV lijn is per direct geactiveerd.</p>
+                  <h3 className="text-xl font-bold text-green-900 text-center mb-1">¡Pago Completado!</h3>
+                  <p className="text-xs text-green-600 text-center mb-5">Tu línea IPTVESPANA ha sido activada inmediatamente.</p>
                   <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex flex-col gap-3 text-xs mb-5">
-                    {[{label:"Host:",val:generatedLine.host},{label:"Gebruikersnaam:",val:generatedLine.username},{label:"Wachtwoord:",val:generatedLine.password}].map((item,i)=>(
+                    {[{label:"Host:",val:generatedLine.host},{label:"Usuario:",val:generatedLine.username},{label:"Contraseña:",val:generatedLine.password}].map((item,i)=>(
                       <div key={i} className={`flex justify-between items-center py-1 ${i<2?"border-b border-green-100":""}`}>
                         <span className="text-green-500">{item.label}</span>
                         <span className="font-sans text-green-900 font-bold select-all">{item.val}</span>
@@ -378,13 +378,13 @@ export default function PricingCalculator() {
                     ))}
                     <div className="flex justify-between items-center py-1 border-t border-green-100">
                       <span className="text-green-500">M3U URL:</span>
-                      <button onClick={()=>navigator.clipboard.writeText(generatedLine.m3uUrl).then(()=>alert("Gekopieerd!"))} className="text-green-700 font-bold flex items-center gap-1 font-sans text-[10px] hover:text-green-900">
-                        <Copy className="w-3 h-3"/> Kopieer
+                      <button onClick={()=>navigator.clipboard.writeText(generatedLine.m3uUrl).then(()=>alert("¡Copiado!"))} className="text-green-700 font-bold flex items-center gap-1 font-sans text-[10px] hover:text-green-900">
+                        <Copy className="w-3 h-3"/> Copiar
                       </button>
                     </div>
                   </div>
                   <button onClick={()=>setCheckoutModalOpen(false)} className="w-full py-3.5 rounded-xl bg-green-600 text-white hover:bg-green-700 font-bold text-sm transition-colors">
-                    Klaar, veel kijkplezier!
+                    ¡Listo, disfruta viendo!
                   </button>
                 </div>
               )}
