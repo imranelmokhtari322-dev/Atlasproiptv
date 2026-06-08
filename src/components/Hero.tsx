@@ -94,9 +94,19 @@ export default function Hero({ onScrollTo }: HeroProps) {
           </button>
         </motion.div>
 
+        {/* Price tag */}
+        <motion.button
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.35 }}
+          onClick={() => onScrollTo("#pricing-section")}
+          className="mt-4 inline-flex items-center gap-2 cursor-pointer group">
+          <span className="text-green-300 text-sm">Desde</span>
+          <span className="text-white font-extrabold text-2xl group-hover:text-amber-300 transition-colors">€5,20<span className="text-base font-medium text-green-300">/mes</span></span>
+          <ArrowRight className="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" />
+        </motion.button>
+
         {/* Badges */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex items-center gap-6 mt-6">
+          className="flex items-center gap-6 mt-4">
           <div className="flex items-center gap-2 text-green-100 text-sm">
             <Play className="w-4 h-4 text-emerald-300 fill-emerald-300" /><span>Activación Instantánea</span>
           </div>
