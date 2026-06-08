@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FAQ_DATA } from "../data";
 import { HelpCircle, ChevronRight, MessageCircle } from "lucide-react";
+import { trackWhatsAppConversion } from "../utils/gtag";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -34,7 +35,7 @@ export default function FAQ() {
             <MessageCircle className="w-5 h-5 text-green-600 shrink-0" />
             <p className="text-xs text-green-600">¿Tienes una pregunta específica? Envíanos un mensaje de WhatsApp directamente.</p>
           </div>
-          <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer" onClick={trackWhatsAppConversion}
             className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-green-900 font-bold text-xs tracking-wide whitespace-nowrap text-center transition-colors">
             Preguntar por WhatsApp
           </a>

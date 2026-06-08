@@ -1,4 +1,5 @@
 import { MessageSquare } from "lucide-react";
+import { trackWhatsAppConversion } from "../utils/gtag";
 
 interface Review {
   name: string;
@@ -179,7 +180,7 @@ export default function WhatsAppReviews() {
         <p className="text-xs text-green-200 mb-4 inline-flex items-center gap-1.5 justify-center">
           <MessageSquare className="w-4 h-4" /> ¿Tienes una pregunta y quieres hablar en directo con soporte?
         </p><br />
-        <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer"
+        <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer" onClick={trackWhatsAppConversion}
           className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-400 text-green-900 hover:bg-amber-500 font-bold text-xs tracking-wide transition-all uppercase shadow-lg">
           Iniciar Chat de WhatsApp &rarr;
         </a>

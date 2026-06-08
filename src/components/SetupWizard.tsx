@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Tv, Cpu, Tablet, BookOpen, Smartphone, Laptop } from "lucide-react";
+import { trackWhatsAppConversion } from "../utils/gtag";
 
 export default function SetupWizard() {
   const [selectedDevice, setSelectedDevice] = useState<"smart_tv"|"firestick"|"android"|"apple"|"pc">("smart_tv");
@@ -81,7 +82,7 @@ export default function SetupWizard() {
                 <span className="font-bold text-green-900">Consejo:</span> Instala <strong className="text-green-900">IPTV Smarters Pro</strong> — el reproductor más estable.
               </div>
             </div>
-            <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer"
+            <a href="https://wa.me/447449708976" target="_blank" rel="noreferrer" onClick={trackWhatsAppConversion}
               className="mt-6 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-green-900 font-bold text-xs tracking-wide text-center uppercase shadow-lg block transition-colors">
               Pedir ayuda gratis
             </a>

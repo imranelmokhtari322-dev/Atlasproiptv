@@ -1,4 +1,5 @@
 import { useState, FormEvent, useEffect } from "react";
+import { trackWhatsAppConversion } from "../utils/gtag";
 import { motion, AnimatePresence } from "motion/react";
 import { Check, RefreshCw, Copy } from "lucide-react";
 import { PRICING_MAPPING } from "../data";
@@ -66,6 +67,7 @@ export default function PricingCalculator() {
   const openWhatsApp = (plan: "VIP" | "Basis", price: number) => {
     const periodLabel = periods.find(p => p.id === selectedPeriod)?.label ?? selectedPeriod;
     const msg = `Hola, quiero pedir el paquete *${plan === "VIP" ? "✦ Premium VIP+" : "Básico"}*. ${periodLabel}, ${selectedDevices} pantalla(s), €${price.toFixed(2).replace(".", ",")}.`;
+    trackWhatsAppConversion();
     window.open(`https://wa.me/447449708976?text=${encodeURIComponent(msg)}`, "_blank", "noopener,noreferrer");
   };
 

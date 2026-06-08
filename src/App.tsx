@@ -1,4 +1,5 @@
 import { useState, useEffect, FormEvent } from "react";
+import { trackWhatsAppConversion } from "./utils/gtag";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ChannelSearch from "./components/ChannelSearch";
@@ -37,6 +38,7 @@ export default function App() {
     e.preventDefault();
     if (!widgetMsg.trim()) return;
     const cleanMsg = encodeURIComponent(widgetMsg);
+    trackWhatsAppConversion();
     window.open(`https://wa.me/447449708976?text=${cleanMsg}`, "_blank", "noopener,noreferrer");
     setWidgetMsg("");
     setWhatsappWidgetOpen(false);
