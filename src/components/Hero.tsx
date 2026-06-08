@@ -41,7 +41,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
                   <h3 className="text-3xl font-black text-green-700 leading-tight underline decoration-green-500 decoration-2 underline-offset-4">IPTVESPANA</h3>
                   <p className="text-green-600 text-xs font-medium mt-1">Una suscripción para todo.</p>
                 </div>
-                <button onClick={() => onScrollTo("#pricing-section")} className="w-full py-2.5 rounded-xl bg-green-600 text-white font-black text-sm cursor-pointer text-center hover:bg-green-700 transition-colors">
+                <button onClick={() => onScrollTo("#pricing-cards")} className="w-full py-2.5 rounded-xl bg-green-600 text-white font-black text-sm cursor-pointer text-center hover:bg-green-700 transition-colors">
                   Ver precios
                 </button>
                 <div className="border-t border-green-100" />
@@ -81,11 +81,11 @@ export default function Hero({ onScrollTo }: HeroProps) {
         {/* Buttons */}
         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-0">
-          <button onClick={() => onScrollTo("#pricing-section")}
+          <button onClick={() => onScrollTo("#pricing-cards")}
             className="px-10 py-5 rounded-full text-green-900 bg-amber-400 hover:bg-amber-500 transition-all hover:scale-[1.02] shadow-xl text-center cursor-pointer text-lg font-black">
             Ver precios
           </button>
-          <button onClick={() => onScrollTo("#pricing-section")}
+          <button onClick={() => onScrollTo("#pricing-cards")}
             className="relative px-10 py-5 rounded-full border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:scale-[1.03] flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer group text-white font-black text-lg overflow-hidden">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <Gift className="w-5 h-5 relative" />
