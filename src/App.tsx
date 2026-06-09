@@ -94,14 +94,14 @@ export default function App() {
 
             <div className="p-4 bg-sky-50 flex flex-col gap-2 min-h-[120px]">
               <div className="self-start max-w-[90%] rounded-r-xl rounded-bl-xl bg-white border border-gray-100 text-xs p-3 shadow-sm text-left">
-                <p className="leading-relaxed text-gray-700">¡Hola! Bienvenido al soporte de Atlas Pro IPTV. Te ayudo con la instalación o cualquier pregunta sobre canales. ¿Qué necesitas?</p>
-                <span className="text-[8px] text-gray-400 block text-right mt-1 font-sans">Ahora</span>
+                <p className="leading-relaxed text-gray-700">Bonjour ! Bienvenue chez Atlas Pro IPTV. Je vous aide avec l'installation ou toute question sur les chaînes. Que puis-je faire pour vous ?</p>
+                <span className="text-[8px] text-gray-400 block text-right mt-1 font-sans">Maintenant</span>
               </div>
             </div>
 
             <form onSubmit={handleWhatsappWidgetSubmit} className="p-3 bg-gray-50 border-t border-gray-100 flex items-center gap-2">
               <input
-                type="text" value={widgetMsg} onChange={(e) => setWidgetMsg(e.target.value)} placeholder="Escribe tu mensaje..."
+                type="text" value={widgetMsg} onChange={(e) => setWidgetMsg(e.target.value)} placeholder="Écrivez votre message..."
                 className="flex-1 bg-white border border-gray-200 rounded-lg py-2 px-3 text-xs text-gray-900 focus:outline-none focus:border-cyan-400 font-sans"
               />
               <button type="submit" className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 shrink-0" aria-label="Enviar">
@@ -114,11 +114,11 @@ export default function App() {
         <button
           onClick={() => setWhatsappWidgetOpen(!whatsappWidgetOpen)}
           className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all text-white cursor-pointer group"
-          aria-label="Abrir chat de soporte WhatsApp"
+          aria-label="Ouvrir le chat de support WhatsApp"
         >
           {whatsappWidgetOpen ? <X className="w-6 h-6 stroke-[2.5]" /> : <MessageSquare className="w-6 h-6 stroke-[2.5]" />}
           <span className="absolute right-16 bg-blue-900 border border-blue-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block pointer-events-none tracking-wide">
-            Soporte Live (¡Disponible!)
+            Support Live (Disponible !)
           </span>
         </button>
       </div>
