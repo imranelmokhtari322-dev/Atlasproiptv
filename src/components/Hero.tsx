@@ -17,8 +17,8 @@ export default function Hero({ onScrollTo }: HeroProps) {
 
         {/* Promo pill */}
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400/20 border border-amber-400/40 text-sm font-semibold text-amber-300 mb-6">
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+          className="inline-flex flex-wrap items-center gap-2 px-3 py-2 sm:px-4 rounded-full bg-amber-400/20 border border-amber-400/40 text-xs sm:text-sm font-semibold text-amber-300 mb-6 max-w-full">
+          <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
           Commandez maintenant et recevez&nbsp;<strong className="uppercase tracking-wide">3 mois gratuits</strong>
         </motion.div>
 
@@ -66,7 +66,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
 
           {/* Heading */}
           <motion.h1 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative z-10 text-[clamp(3rem,10vw,7rem)] font-extrabold font-display tracking-tighter leading-[1.05] text-white max-w-2xl">
+            className="relative z-10 text-[clamp(1.75rem,8vw,7rem)] font-extrabold font-display tracking-tighter leading-[1.05] text-white max-w-2xl">
             Atlas Pro IPTV<br />
             <span className="italic font-serif font-normal text-blue-300">Premium</span> IPTV
           </motion.h1>
@@ -82,11 +82,11 @@ export default function Hero({ onScrollTo }: HeroProps) {
         <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-0">
           <button onClick={() => onScrollTo("#pricing-cards")}
-            className="px-10 py-5 rounded-full text-blue-900 bg-amber-400 hover:bg-amber-500 transition-all hover:scale-[1.02] shadow-xl text-center cursor-pointer text-lg font-black">
+            className="px-6 sm:px-10 py-4 sm:py-5 rounded-full text-blue-900 bg-amber-400 hover:bg-amber-500 transition-all hover:scale-[1.02] shadow-xl text-center cursor-pointer text-base sm:text-lg font-black">
             Voir les prix
           </button>
           <button onClick={() => onScrollTo("#pricing-cards")}
-            className="relative px-10 py-5 rounded-full border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:scale-[1.03] flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer group text-white font-black text-lg overflow-hidden">
+            className="relative px-6 sm:px-10 py-4 sm:py-5 rounded-full border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:scale-[1.03] flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer group text-white font-black text-base sm:text-lg overflow-hidden">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <Gift className="w-5 h-5 relative" />
             <span className="relative">Bénéficier de <span className="underline">3 mois</span> gratuits</span>

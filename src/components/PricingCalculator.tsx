@@ -89,29 +89,29 @@ export default function PricingCalculator() {
           </p>
 
           {/* Countdown timer */}
-          <div className="inline-block bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-8 py-6 shadow-md">
+          <div className="inline-block bg-white/10 backdrop-blur border border-white/20 rounded-2xl px-4 sm:px-8 py-5 sm:py-6 shadow-md">
             <div className="flex items-center gap-2 justify-center mb-5">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               <span className="text-[11px] font-bold uppercase tracking-widest text-blue-200 font-sans">
                 Offre limitée se termine à minuit
               </span>
             </div>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-4">
               {[
                 { val: timeLeft.hours,   label: "HEURES"   },
                 { val: timeLeft.minutes, label: "MINUTES"  },
                 { val: timeLeft.seconds, label: "SECONDES" },
               ].map((unit, i) => (
-                <div key={i} className="flex items-center gap-4">
+                <div key={i} className="flex items-center gap-2 sm:gap-4">
                   <div className="text-center">
-                    <div className="bg-white/20 border border-white/30 rounded-xl w-16 h-16 flex items-center justify-center">
-                      <span className="text-3xl font-black text-white font-display">
+                    <div className="bg-white/20 border border-white/30 rounded-xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center">
+                      <span className="text-xl sm:text-3xl font-black text-white font-display">
                         {unit.val.toString().padStart(2, "0")}
                       </span>
                     </div>
-                    <span className="text-[9px] text-blue-300 font-sans tracking-widest mt-1 block">{unit.label}</span>
+                    <span className="text-[8px] sm:text-[9px] text-blue-300 font-sans tracking-widest mt-1 block">{unit.label}</span>
                   </div>
-                  {i < 2 && <span className="text-2xl font-black text-white/50 mb-5">:</span>}
+                  {i < 2 && <span className="text-xl sm:text-2xl font-black text-white/50 mb-4 sm:mb-5">:</span>}
                 </div>
               ))}
             </div>
@@ -134,7 +134,7 @@ export default function PricingCalculator() {
                 <div className="flex gap-2">
                   {periods.map((p) => (
                     <button key={p.id} onClick={() => setSelectedPeriod(p.id)}
-                      className={`relative flex-1 py-4 rounded-2xl text-center font-bold text-sm transition-all cursor-pointer overflow-hidden border-2 ${
+                      className={`relative flex-1 py-3 sm:py-4 rounded-2xl text-center font-bold text-xs sm:text-sm transition-all cursor-pointer overflow-hidden border-2 ${
                         selectedPeriod === p.id
                           ? p.bonus
                             ? "bg-amber-400 border-amber-400 text-blue-900 shadow-lg"

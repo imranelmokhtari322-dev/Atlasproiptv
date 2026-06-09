@@ -78,7 +78,7 @@ export default function App() {
       <div className="fixed bottom-6 right-6 z-40" id="whatsapp-sticky-widget">
 
         {whatsappWidgetOpen && (
-          <div className="absolute bottom-16 right-0 w-80 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden text-left">
+          <div className="absolute bottom-16 right-0 w-72 sm:w-80 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden text-left" style={{ maxWidth: "calc(100vw - 32px)" }}>
             <div className="px-4 py-3 bg-[#005c4b] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-blue-800 border border-blue-600/40 flex items-center justify-center text-sm">👩‍💻</div>
