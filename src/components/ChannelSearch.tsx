@@ -1,22 +1,23 @@
+// v4 real logos
 export default function ChannelSearch() {
-  const channelLogos = [
-    { name: "Movistar Plus+",           logo: "/assets/channels/movistar-plus.svg",     invert: false },
-    { name: "LaLiga TV por M+",        logo: "/assets/channels/laliga-tv.svg",          invert: false },
-    { name: "Liga de Campeones por M+",logo: "/assets/channels/liga-campeones.svg",     invert: false },
-    { name: "Estrenos por M+",         logo: "/assets/channels/estrenos-movistar.svg",  invert: false },
-    { name: "DAZN LaLiga",             logo: "/assets/channels/dazn-laliga.svg",        invert: false },
-    { name: "Star Channel",            logo: "/assets/channels/star-channel.svg",       invert: false },
-    { name: "Warner TV",               logo: "/assets/channels/warner-tv.svg",          invert: false },
-    { name: "AXN",                     logo: "/assets/channels/axn.svg",                invert: false },
-    { name: "Calle 13",                logo: "/assets/channels/calle13.svg",            invert: false },
-    { name: "Canal Hollywood",         logo: "/assets/channels/canal-hollywood.svg",    invert: false },
-    { name: "National Geographic",     logo: "/assets/channels/national-geographic.svg",invert: false },
-    { name: "Syfy",                    logo: "/assets/channels/syfy.svg",               invert: false },
+  const channels = [
+    { name: "TF1",      logo: "/assets/channels/tf1.svg",      color: "#001A65" },
+    { name: "France 2", logo: "/assets/channels/france2.png",  color: "#E30D18" },
+    { name: "France 3", logo: "/assets/channels/france3.png",  color: "#2E7D32" },
+    { name: "Canal+",   logo: "/assets/channels/canalplus.svg",color: "#111111" },
+    { name: "France 5", logo: "/assets/channels/france5.png",  color: "#0055A5" },
+    { name: "M6",       logo: "/assets/channels/m6.png",       color: "#E6A800" },
+    { name: "Arte",     logo: "/assets/channels/arte.png",     color: "#E2001A" },
+    { name: "C8",       logo: "/assets/channels/c8.png",       color: "#009BDE" },
+    { name: "W9",       logo: "/assets/channels/w9.svg",       color: "#52327C" },
+    { name: "TMC",      logo: "/assets/channels/tmc.jpg",      color: "#E4007C" },
+    { name: "BFM TV",   logo: "/assets/channels/bfmtv.jpg",   color: "#D80027" },
+    { name: "Gulli",    logo: "/assets/channels/gulli.png",    color: "#F57C00" },
   ];
 
-  const doubled = [...channelLogos, ...channelLogos];
+  const doubled = [...channels, ...channels];
 
-  const bigNames = ["MOVISTAR PLUS+","LALIGA TV","LIGA DE CAMPEONES","DAZN LALIGA","ESTRENOS M+","STAR CHANNEL","WARNER TV","AXN","CALLE 13","CANAL HOLLYWOOD","NATIONAL GEOGRAPHIC","SYFY"];
+  const bigNames = ["TF1","FRANCE 2","FRANCE 3","CANAL+","M6","ARTE","BFM TV","FRANCE 5","C8","W9","TMC","GULLI","NETFLIX","DISNEY+","CANAL+ CINÉMA"];
   const doubledNames = [...bigNames, ...bigNames];
 
   return (
@@ -39,15 +40,32 @@ export default function ChannelSearch() {
           <h2 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-blue-900">Toutes vos chaînes préférées</h2>
         </div>
 
-        {/* Auto-scrolling logos */}
+        {/* Auto-scrolling channel cards */}
         <div className="w-full overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-blue-50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-blue-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-blue-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-blue-50 to-transparent z-10 pointer-events-none" />
           <div className="animate-scroll-slow">
-            <div className="flex gap-5 px-2">
+            <div className="flex gap-4 px-2 py-4">
               {doubled.map((ch, i) => (
-                <div key={i} className="bg-blue-50 border border-blue-200 rounded-2xl flex items-center justify-center w-[140px] h-[90px] sm:w-[160px] sm:h-[100px] hover:bg-blue-100 hover:scale-105 transition-all duration-200 cursor-pointer flex-shrink-0">
-                  <img src={ch.logo} alt={ch.name} className="w-[75%] h-[75%] object-contain" />
+                <div key={i} className="group relative flex-shrink-0 w-[155px] sm:w-[175px] cursor-pointer">
+                  {/* Brand glow on hover */}
+                  <div
+                    className="absolute inset-0 rounded-2xl blur-xl scale-90 opacity-0 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none"
+                    style={{ backgroundColor: ch.color }}
+                  />
+                  {/* Card */}
+                  <div className="relative rounded-2xl overflow-hidden border border-gray-100 shadow-md group-hover:shadow-xl group-hover:scale-[1.06] transition-all duration-300 bg-white flex flex-col">
+                    {/* Logo area — white bg, logo centered with padding */}
+                    <div className="w-full h-[90px] flex items-center justify-center bg-white p-3">
+                      <img
+                        src={ch.logo}
+                        alt={ch.name}
+                        className="max-w-full max-h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                  {/* Shine sweep */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 pointer-events-none" />
                 </div>
               ))}
             </div>
