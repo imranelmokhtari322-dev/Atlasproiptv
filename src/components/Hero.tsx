@@ -89,7 +89,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
             className="relative px-10 py-5 rounded-full border-2 border-white/30 bg-white/10 hover:bg-white/20 hover:scale-[1.03] flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer group text-white font-black text-lg overflow-hidden">
             <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
             <Gift className="w-5 h-5 relative" />
-            <span className="relative">Réclamer mes <span className="underline">3 mois</span> offerts</span>
+            <span className="relative">Bénéficier de <span className="underline">3 mois</span> gratuits</span>
             <ArrowRight className="w-5 h-5 relative group-hover:translate-x-1 transition-transform" />
           </button>
         </motion.div>
