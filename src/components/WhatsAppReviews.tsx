@@ -193,6 +193,15 @@ export default function WhatsAppReviews() {
           <h3 className="text-2xl font-extrabold font-display text-white">Payez comme vous voulez</h3>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">
+          {/* Carte Bancaire CB */}
+          <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
+            <svg viewBox="0 0 24 16" className="h-5 w-auto">
+              <rect width="24" height="16" rx="2" fill="white" fillOpacity="0.15" stroke="white" strokeOpacity="0.3" strokeWidth="0.5"/>
+              <text x="3" y="11" fontSize="7" fontWeight="900" fill="white" fontFamily="Arial">CB</text>
+            </svg>
+            <span className="text-sm font-extrabold text-white">Carte Bancaire</span>
+          </div>
+          {/* PayPal */}
           <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
             <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
               <path d="M7 5h7a5 5 0 0 1 0 10H9l-1 5H5L7 5z" fill="white" fillOpacity="0.9"/>
@@ -200,18 +209,21 @@ export default function WhatsAppReviews() {
             </svg>
             <span className="text-sm font-extrabold text-white">PayPal</span>
           </div>
+          {/* Apple Pay */}
           <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
-            <svg viewBox="0 0 32 12" className="h-4 w-auto">
-              <text x="0" y="10" fontSize="12" fontWeight="900" fill="white" fontFamily="Arial" letterSpacing="1.5">VISA</text>
+            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="white">
+              <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.29.07 2.18.74 2.93.8.95-.19 1.86-.87 2.86-.76 1.21.14 2.12.67 2.72 1.7-2.49 1.48-1.89 4.73.52 5.64-.51 1.35-1.18 2.69-2.03 3.5zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
             </svg>
+            <span className="text-sm font-extrabold text-white">Apple Pay</span>
           </div>
+          {/* Google Pay */}
           <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
-            <svg viewBox="0 0 34 22" className="h-5 w-auto">
-              <circle cx="11" cy="11" r="10" fill="white" fillOpacity="0.9"/>
-              <circle cx="23" cy="11" r="10" fill="white" fillOpacity="0.5"/>
+            <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
+              <text x="1" y="17" fontSize="10" fontWeight="900" fill="white" fontFamily="Arial" letterSpacing="-0.5">G Pay</text>
             </svg>
-            <span className="text-sm font-extrabold text-white">Mastercard</span>
+            <span className="text-sm font-extrabold text-white">Google Pay</span>
           </div>
+          {/* Virement */}
           <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
             <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none" stroke="white" strokeWidth="1.8">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 3L2 8h20L12 3z"/>
@@ -219,13 +231,6 @@ export default function WhatsAppReviews() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M2 17h20v3H2z"/>
             </svg>
             <span className="text-sm font-extrabold text-white">Virement Bancaire</span>
-          </div>
-          <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-5 py-3">
-            <svg viewBox="0 0 24 24" className="w-5 h-5">
-              <rect width="24" height="24" rx="5" fill="white" fillOpacity="0.15"/>
-              <text x="5" y="18" fontSize="16" fontWeight="900" fill="white" fontFamily="Arial">B</text>
-            </svg>
-            <span className="text-sm font-extrabold text-white">Carte Bancaire</span>
           </div>
         </div>
       </div>

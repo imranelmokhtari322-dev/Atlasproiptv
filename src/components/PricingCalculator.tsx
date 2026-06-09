@@ -199,7 +199,7 @@ export default function PricingCalculator() {
               {[
                 "SD/HD/FULL HD/4K/8K/HDR-VR",
                 "+80 000 Chaînes + Netflix",
-                "Canal+, TF1, France 2, RMC Sport, Eurosport",
+                "TF1, M6, Canal+, BFM TV, Arte, France 2/3/5",
                 "+200 000 Films & Séries",
                 "Mises à jour Quotidiennes",
                 "Tous les Événements Sportifs PPV",
@@ -209,7 +209,7 @@ export default function PricingCalculator() {
                 "Tous les Appareils",
                 "VPN Inclus",
                 "Contenu VIP Exclusif",
-                "Canal+, Netflix, Amazon, HBO, Apple TV",
+                "Netflix, Amazon, Canal+, Disney+, Apple TV+",
               ].map((feature) => (
                 <div key={feature} className="flex items-start gap-2.5 text-xs text-blue-900">
                   <div className="w-4 h-4 rounded-full bg-blue-900/15 border border-blue-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -247,7 +247,7 @@ export default function PricingCalculator() {
               {[
                 "Qualité SD/HD/FULL HD",
                 "+50 000 Chaînes + Netflix",
-                "Canal+, TF1, Eurosport, RMC Sport, Viaplay",
+                "TF1, M6, Canal+, RMC Sport, Eurosport",
                 "+140 000 Films & Séries",
                 "Mises à jour Hebdomadaires",
                 "Support 24/7",
@@ -256,7 +256,7 @@ export default function PricingCalculator() {
                 "Tous les Appareils",
                 "VPN Inclus",
                 "Contenu Exclusif",
-                "Netflix, Amazon, HBO, Apple TV",
+                "Netflix, Amazon, Disney+, Apple TV+",
               ].map((feature) => (
                 <div key={feature} className="flex items-start gap-2.5 text-xs text-blue-800">
                   <div className="w-4 h-4 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center flex-shrink-0 mt-0.5">
