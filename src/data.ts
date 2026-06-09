@@ -17,8 +17,8 @@ export const CHANNELS_DATA: Channel[] = [
   { id: "dazn-f1",            name: "DAZN F1 4K",                 category: "SPORT",  playingNow: "Fórmula 1: GP de España En Directo",   quality: "4K",  logoColor: "bg-cyan-700" },
   { id: "dazn-box",           name: "DAZN Box Office UHD",        category: "SPORT",  playingNow: "Boxeo Premium: Velada del Año",        quality: "4K",  logoColor: "bg-cyan-800" },
   { id: "bein-laliga",        name: "beIN LaLiga HD",             category: "SPORT",  playingNow: "Resumen LaLiga Jornada 28",            quality: "FHD", logoColor: "bg-amber-600" },
-  { id: "eurosport-1",        name: "Eurosport 1 4K",             category: "SPORT",  playingNow: "Vuelta a España - Etapa Reina",        quality: "4K",  logoColor: "bg-teal-600" },
-  { id: "eurosport-2",        name: "Eurosport 2 HD",             category: "SPORT",  playingNow: "Tenis: Masters 1000 Madrid",           quality: "FHD", logoColor: "bg-teal-700" },
+  { id: "eurosport-1",        name: "Eurosport 1 4K",             category: "SPORT",  playingNow: "Vuelta a España - Etapa Reina",        quality: "4K",  logoColor: "bg-blue-600" },
+  { id: "eurosport-2",        name: "Eurosport 2 HD",             category: "SPORT",  playingNow: "Tenis: Masters 1000 Madrid",           quality: "FHD", logoColor: "bg-blue-700" },
   { id: "movistar-deportes",  name: "Movistar Deportes HD",       category: "SPORT",  playingNow: "Deportes en Directo 24h",              quality: "FHD", logoColor: "bg-sky-900" },
   { id: "sky-sports-f1",      name: "Sky Sports F1 HD",           category: "SPORT",  playingNow: "F1: Análisis y Clasificación",         quality: "FHD", logoColor: "bg-red-900" },
   { id: "eleven-sports",      name: "Eleven Sports 4K",           category: "SPORT",  playingNow: "Premier League En Directo",            quality: "4K",  logoColor: "bg-orange-700" },
@@ -120,7 +120,7 @@ export const WHATSAPP_TESTIMONIALS: Testimonial[] = [
     name: "Carlos Martínez",
     avatar: "👨‍💻",
     date: "Ayer",
-    message: "Hola soporte IPTVESPANA, quería deciros que la configuración en mi LG TV tardó menos de 3 minutos. ¡El stream de F1 es muy nítido sin buffering! 🏎️💨",
+    message: "Hola soporte Atlas Pro IPTV, quería deciros que la configuración en mi LG TV tardó menos de 3 minutos. ¡El stream de F1 es muy nítido sin buffering! 🏎️💨",
     replyTime: "12:31",
     isVerified: true
   },
@@ -165,18 +165,18 @@ export const WHATSAPP_TESTIMONIALS: Testimonial[] = [
 export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-1",
-    question: "¿Qué es IPTVESPANA y cómo funciona exactamente?",
-    answer: "IPTVESPANA es un proveedor de IPTV premium que transmite televisión a través de internet. Ya no necesitas antena ni cables de coaxial. Con nuestra suscripción obtienes acceso directo a través de una práctica app en tu Smart TV, teléfono, tablet u ordenador a más de 20.000+ canales en directo, incluyendo todos los canales españoles, canales deportivos (ESPN, Movistar+, DAZN) y una enorme biblioteca de películas y series (VOD)."
+    question: "¿Qué es Atlas Pro IPTV y cómo funciona exactamente?",
+    answer: "Atlas Pro IPTV es un proveedor de IPTV premium que transmite televisión a través de internet. Ya no necesitas antena ni cables de coaxial. Con nuestra suscripción obtienes acceso directo a través de una práctica app en tu Smart TV, teléfono, tablet u ordenador a más de 20.000+ canales en directo, incluyendo todos los canales españoles, canales deportivos (ESPN, Movistar+, DAZN) y una enorme biblioteca de películas y series (VOD)."
   },
   {
     id: "faq-2",
     question: "¿Es complicada la instalación y qué dispositivos son compatibles?",
-    answer: "No, la instalación es muy sencilla y está lista en menos de 5 minutos. IPTVESPANA funciona en prácticamente cualquier dispositivo: Smart TV (Samsung, LG, Sony con apps como IPTV Smarters, Flix IPTV o IBOTV), Amazon Fire TV Stick, cajas Android TV, Apple TV, smartphones (iOS/Android), tablets, Chromecast y PC. Tras la compra te enviamos una guía clara paso a paso por correo, y nuestro soporte te ayuda directamente por WhatsApp si tienes alguna duda."
+    answer: "No, la instalación es muy sencilla y está lista en menos de 5 minutos. Atlas Pro IPTV funciona en prácticamente cualquier dispositivo: Smart TV (Samsung, LG, Sony con apps como IPTV Smarters, Flix IPTV o IBOTV), Amazon Fire TV Stick, cajas Android TV, Apple TV, smartphones (iOS/Android), tablets, Chromecast y PC. Tras la compra te enviamos una guía clara paso a paso por correo, y nuestro soporte te ayuda directamente por WhatsApp si tienes alguna duda."
   },
   {
     id: "faq-3",
     question: "¿Estoy atado a un contrato o suscripción larga?",
-    answer: "En absoluto. En IPTVESPANA utilizamos exclusivamente paquetes de prepago flexibles. Tú eliges si quieres ver 1, 3, 6 o 12 meses. Tras este período la suscripción se detiene automáticamente, a menos que elijas renovar. Sin domiciliaciones automáticas y sin renovaciones silenciosas. ¡No estás atado a nada!"
+    answer: "En absoluto. En Atlas Pro IPTV utilizamos exclusivamente paquetes de prepago flexibles. Tú eliges si quieres ver 1, 3, 6 o 12 meses. Tras este período la suscripción se detiene automáticamente, a menos que elijas renovar. Sin domiciliaciones automáticas y sin renovaciones silenciosas. ¡No estás atado a nada!"
   },
   {
     id: "faq-4",
@@ -190,7 +190,7 @@ export const FAQ_DATA: FAQItem[] = [
   },
   {
     id: "faq-6",
-    question: "¿Puedo usar la suscripción IPTVESPANA en varios dispositivos a la vez?",
+    question: "¿Puedo usar la suscripción Atlas Pro IPTV en varios dispositivos a la vez?",
     answer: "De forma estándar, nuestra suscripción es para 1 dispositivo a la vez (1 stream activo). Si quieres ver en varias televisiones o dispositivos simultáneamente en casa, puedes actualizar fácilmente a 2, 3 o 4 pantallas en nuestro configurador de precios con un gran descuento."
   },
   {

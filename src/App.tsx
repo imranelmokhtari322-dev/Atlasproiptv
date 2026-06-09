@@ -81,10 +81,10 @@ export default function App() {
           <div className="absolute bottom-16 right-0 w-80 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden text-left">
             <div className="px-4 py-3 bg-[#005c4b] flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-full bg-emerald-800 border border-emerald-600/40 flex items-center justify-center text-sm">👩‍💻</div>
+                <div className="w-8 h-8 rounded-full bg-blue-800 border border-blue-600/40 flex items-center justify-center text-sm">👩‍💻</div>
                 <div>
-                  <h4 className="text-xs font-bold text-white">Ana de IPTVESPANA</h4>
-                  <span className="text-[9px] text-emerald-300 block">Responde normalmente en 2 min.</span>
+                  <h4 className="text-xs font-bold text-white">Sara de Atlas Pro IPTV</h4>
+                  <span className="text-[9px] text-blue-300 block">Responde normalmente en 2 min.</span>
                 </div>
               </div>
               <button onClick={() => setWhatsappWidgetOpen(false)} className="p-1 rounded-full text-white/60 hover:text-white">
@@ -94,7 +94,7 @@ export default function App() {
 
             <div className="p-4 bg-sky-50 flex flex-col gap-2 min-h-[120px]">
               <div className="self-start max-w-[90%] rounded-r-xl rounded-bl-xl bg-white border border-gray-100 text-xs p-3 shadow-sm text-left">
-                <p className="leading-relaxed text-gray-700">¡Hola! Bienvenido al soporte de IPTVESPANA. Te ayudo con la instalación o cualquier pregunta sobre canales. ¿Qué necesitas?</p>
+                <p className="leading-relaxed text-gray-700">¡Hola! Bienvenido al soporte de Atlas Pro IPTV. Te ayudo con la instalación o cualquier pregunta sobre canales. ¿Qué necesitas?</p>
                 <span className="text-[8px] text-gray-400 block text-right mt-1 font-sans">Ahora</span>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function App() {
                 type="text" value={widgetMsg} onChange={(e) => setWidgetMsg(e.target.value)} placeholder="Escribe tu mensaje..."
                 className="flex-1 bg-white border border-gray-200 rounded-lg py-2 px-3 text-xs text-gray-900 focus:outline-none focus:border-cyan-400 font-sans"
               />
-              <button type="submit" className="p-2 rounded-full bg-emerald-500 text-white hover:bg-emerald-600 shrink-0" aria-label="Enviar">
+              <button type="submit" className="p-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 shrink-0" aria-label="Enviar">
                 <Send className="w-3.5 h-3.5" />
               </button>
             </form>
@@ -113,11 +113,11 @@ export default function App() {
 
         <button
           onClick={() => setWhatsappWidgetOpen(!whatsappWidgetOpen)}
-          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all text-white cursor-pointer group"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-500 hover:bg-blue-600 flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all text-white cursor-pointer group"
           aria-label="Abrir chat de soporte WhatsApp"
         >
           {whatsappWidgetOpen ? <X className="w-6 h-6 stroke-[2.5]" /> : <MessageSquare className="w-6 h-6 stroke-[2.5]" />}
-          <span className="absolute right-16 bg-green-900 border border-green-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block pointer-events-none tracking-wide">
+          <span className="absolute right-16 bg-blue-900 border border-blue-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-xl opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block pointer-events-none tracking-wide">
             Soporte Live (¡Disponible!)
           </span>
         </button>
@@ -127,7 +127,7 @@ export default function App() {
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 left-6 z-40 w-10 h-10 rounded-full bg-green-800 hover:bg-green-700 border border-green-600 text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all"
+          className="fixed bottom-6 left-6 z-40 w-10 h-10 rounded-full bg-blue-800 hover:bg-blue-700 border border-blue-600 text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all"
           aria-label="Volver arriba"
         >
           <ChevronUp className="w-5 h-5" />

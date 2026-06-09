@@ -162,10 +162,10 @@ function MarqueeRow({ reviews, reverse = false }: { reviews: Review[]; reverse?:
 
 export default function WhatsAppReviews() {
   return (
-    <section className="bg-gradient-to-br from-emerald-800 to-green-900 text-white py-16 border-b-2 border-green-700" style={{ overflowX: "hidden" }} id="reviews-section">
+    <section className="bg-gradient-to-br from-blue-800 to-green-900 text-white py-16 border-b-2 border-green-700" style={{ overflowX: "hidden" }} id="reviews-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs uppercase font-sans text-emerald-300 font-bold tracking-widest bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-3 inline-block">23.000+ CLIENTES SATISFECHOS</span>
+          <span className="text-xs uppercase font-sans text-blue-300 font-bold tracking-widest bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-3 inline-block">23.000+ CLIENTES SATISFECHOS</span>
           <h2 className="text-3xl sm:text-4xl font-extrabold font-display tracking-tight text-white mb-4">Lo que dicen nuestros clientes</h2>
           <p className="text-green-200 text-sm sm:text-base">Mensajes reales de clientes satisfechos por WhatsApp.</p>
         </div>
@@ -189,7 +189,7 @@ export default function WhatsAppReviews() {
       {/* Payment methods */}
       <div className="max-w-3xl mx-auto px-4 mt-14">
         <div className="text-center mb-6">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-300 font-sans bg-white/10 border border-white/20 px-3 py-1 rounded-full inline-block mb-3">Métodos de Pago</span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-blue-300 font-sans bg-white/10 border border-white/20 px-3 py-1 rounded-full inline-block mb-3">Métodos de Pago</span>
           <h3 className="text-2xl font-extrabold font-display text-white">Paga como quieras</h3>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-3">

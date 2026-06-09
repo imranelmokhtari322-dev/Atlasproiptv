@@ -8,7 +8,7 @@ const PosterCard: React.FC<{ item: MediaItem }> = ({ item }) => (
     <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10">
-      <div className="p-3 rounded-full bg-green-500 text-white scale-75 group-hover:scale-100 transition-transform duration-300 shadow-lg">
+      <div className="p-3 rounded-full bg-blue-500 text-white scale-75 group-hover:scale-100 transition-transform duration-300 shadow-lg">
         <Play className="w-5 h-5 fill-white" />
       </div>
     </div>
@@ -23,8 +23,8 @@ function CarouselRow({ items, speed = "animate-scroll" }: { items: MediaItem[]; 
   const doubled = [...items, ...items];
   return (
     <div className="w-full overflow-hidden relative">
-      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-green-50 to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-green-50 to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-blue-50 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-blue-50 to-transparent z-10 pointer-events-none" />
       <div className={speed}>
         <div className="flex gap-4 px-2">
           {doubled.map((item, i) => <PosterCard key={`${item.id}-${i}`} item={item} />)}
@@ -38,10 +38,10 @@ const SectionRow: React.FC<{ label: string; title: string; badge: string; childr
   <div className="mb-12">
     <div className="flex items-center justify-between mb-5">
       <div>
-        <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest block mb-1">{label}</span>
-        <h2 className="text-xl sm:text-2xl font-extrabold font-display tracking-tight text-green-900">{title}</h2>
+        <span className="text-[10px] uppercase font-sans text-blue-600 font-bold tracking-widest block mb-1">{label}</span>
+        <h2 className="text-xl sm:text-2xl font-extrabold font-display tracking-tight text-blue-900">{title}</h2>
       </div>
-      <span className="text-[10px] font-sans font-bold text-green-500 uppercase tracking-widest hidden sm:block">{badge}</span>
+      <span className="text-[10px] font-sans font-bold text-blue-500 uppercase tracking-widest hidden sm:block">{badge}</span>
     </div>
     {children}
   </div>
@@ -49,18 +49,18 @@ const SectionRow: React.FC<{ label: string; title: string; badge: string; childr
 
 export default function SportsAndEntertainment() {
   return (
-    <section className="bg-green-50 text-green-900 py-14 border-b border-green-200 overflow-hidden" id="sports-entertainment-section">
+    <section className="bg-blue-50 text-blue-900 py-14 border-b border-blue-200 overflow-hidden" id="sports-entertainment-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <SectionRow label="TENDENCIA AHORA EN ESPAÑA" title="Top Películas en España" badge="DISPONIBLE EN 4K">
+        <SectionRow label="TENDANCE EN CE MOMENT" title="Top Films" badge="DISPONIBLE EN 4K">
           <CarouselRow items={TOP_MOVIES} speed="animate-scroll" />
         </SectionRow>
 
-        <SectionRow label="SERIES ESPAÑOLAS EN TENDENCIA" title="Top Series Españolas" badge="CONTENIDO EXCLUSIVO ES">
+        <SectionRow label="SÉRIES EN TENDANCE" title="Top Séries" badge="CONTENU EXCLUSIF">
           <CarouselRow items={TOP_SHOWS} speed="animate-scroll-fast" />
         </SectionRow>
 
-        <SectionRow label="CINE MUNDIAL EN ESPAÑA" title="Top Películas Internacionales" badge="POPULAR EN ESPAÑA">
+        <SectionRow label="CINÉMA INTERNATIONAL" title="Top Films Internationaux" badge="POPULAIRE">
           <CarouselRow items={TOP_SHOWS_INTL} speed="animate-scroll-fast" />
         </SectionRow>
 

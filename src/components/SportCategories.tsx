@@ -1,27 +1,27 @@
 const sports = [
-  { name: "Fútbol",    sub: "LALIGA, CHAMPIONS LEAGUE", img: "/assets/sports/voetbal.jpg"    },
-  { name: "Baloncesto", sub: "ACB, NBA, EUROLIGA",      img: "/assets/sports/hockey.jpg"     },
-  { name: "Motociclismo", sub: "MOTOGP, SUPERBIKE",     img: "/assets/sports/schaatsen.jpg"  },
-  { name: "Ciclismo",  sub: "TOUR, GIRO, VUELTA",       img: "/assets/sports/wielrennen.jpg" },
-  { name: "Tenis",     sub: "GRAND SLAMS",              img: "/assets/sports/tennis.jpg"     },
-  { name: "Padel",     sub: "PADEL PREMIUM",            img: "/assets/sports/padel.jpg"      },
-  { name: "Fórmula 1", sub: "F1, F2, F3",               img: "/assets/sports/formule1.jpg"   },
-  { name: "Balonmano", sub: "LIGA ASOBAL, EHF",         img: "/assets/sports/volleybal.jpg"  },
-  { name: "Golf",      sub: "PGA TOUR, MASTERS",        img: "/assets/sports/golf.jpg"       },
-  { name: "Natación",  sub: "MUNDIAL, OLIMPIADAS",      img: "/assets/sports/zwemmen.jpg"    },
+  { name: "Football",   sub: "LIGUE 1, CHAMPIONS LEAGUE", img: "/assets/sports/voetbal.jpg"    },
+  { name: "Basketball", sub: "NBA, EUROLEAGUE",          img: "/assets/sports/hockey.jpg"     },
+  { name: "Moto",       sub: "MOTOGP, SUPERBIKE",        img: "/assets/sports/schaatsen.jpg"  },
+  { name: "Cyclisme",   sub: "TOUR, GIRO, VUELTA",       img: "/assets/sports/wielrennen.jpg" },
+  { name: "Tennis",     sub: "GRAND SLAMS",              img: "/assets/sports/tennis.jpg"     },
+  { name: "Padel",      sub: "PADEL PREMIUM",            img: "/assets/sports/padel.jpg"      },
+  { name: "Formule 1",  sub: "F1, F2, F3",               img: "/assets/sports/formule1.jpg"   },
+  { name: "Handball",   sub: "LNH, EHF CHAMPIONS",       img: "/assets/sports/volleybal.jpg"  },
+  { name: "Golf",       sub: "PGA TOUR, MASTERS",        img: "/assets/sports/golf.jpg"       },
+  { name: "Natation",   sub: "MONDIAL, OLYMPIQUES",      img: "/assets/sports/zwemmen.jpg"    },
 ];
 
 export default function SportCategories() {
   return (
-    <section className="py-16 border-b-2 border-green-700 overflow-hidden bg-gradient-to-br from-green-900 to-emerald-800" id="sport-categories-section">
+    <section className="py-16 border-b-2 border-blue-700 overflow-hidden bg-gradient-to-br from-blue-900 to-blue-800" id="sport-categories-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <span className="text-[10px] uppercase font-sans text-emerald-400 font-bold tracking-widest block mb-2">DE LALIGA A LA FÓRMULA 1</span>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white">Todos los Deportes En Directo en 4K</h2>
+          <span className="text-[10px] uppercase font-sans text-blue-400 font-bold tracking-widest block mb-2">DU FOOTBALL À LA FORMULE 1</span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold font-display tracking-tight text-white">Tous les Sports en Direct en 4K</h2>
         </div>
         <div className="w-full overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-green-900 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-green-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-blue-900 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-blue-900 to-transparent z-10 pointer-events-none" />
 
           <div className="animate-scroll">
             <div className="flex gap-4 px-2">

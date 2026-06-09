@@ -20,13 +20,13 @@ export default function ChannelSearch() {
   const doubledNames = [...bigNames, ...bigNames];
 
   return (
-    <section className="relative bg-green-50 text-green-900 py-14 border-b border-green-200 overflow-hidden" id="channels-section">
+    <section className="relative bg-blue-50 text-blue-900 py-14 border-b border-blue-200 overflow-hidden" id="channels-section">
 
       {/* Big scrolling names */}
       <div className="w-full overflow-hidden relative mb-12">
         <div className="animate-scroll whitespace-nowrap flex gap-16 py-3">
           {doubledNames.map((name, i) => (
-            <span key={i} className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-green-700 select-none flex-shrink-0 opacity-30">
+            <span key={i} className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-blue-700 select-none flex-shrink-0 opacity-30">
               {name}
             </span>
           ))}
@@ -35,18 +35,18 @@ export default function ChannelSearch() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
-          <span className="text-[10px] uppercase font-sans text-green-600 font-bold tracking-widest block mb-1">TV EN DIRECTO</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-green-900">Todos tus canales favoritos</h2>
+          <span className="text-[10px] uppercase font-sans text-blue-600 font-bold tracking-widest block mb-1">TV EN DIRECT</span>
+          <h2 className="text-2xl sm:text-3xl font-extrabold font-display tracking-tight text-blue-900">Toutes vos chaînes préférées</h2>
         </div>
 
         {/* Auto-scrolling logos */}
         <div className="w-full overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-green-50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-green-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-blue-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-blue-50 to-transparent z-10 pointer-events-none" />
           <div className="animate-scroll-slow">
             <div className="flex gap-5 px-2">
               {doubled.map((ch, i) => (
-                <div key={i} className="bg-green-50 border border-green-200 rounded-2xl flex items-center justify-center w-[140px] h-[90px] sm:w-[160px] sm:h-[100px] hover:bg-green-100 hover:scale-105 transition-all duration-200 cursor-pointer flex-shrink-0">
+                <div key={i} className="bg-blue-50 border border-blue-200 rounded-2xl flex items-center justify-center w-[140px] h-[90px] sm:w-[160px] sm:h-[100px] hover:bg-blue-100 hover:scale-105 transition-all duration-200 cursor-pointer flex-shrink-0">
                   <img src={ch.logo} alt={ch.name} className="w-[75%] h-[75%] object-contain" />
                 </div>
               ))}
