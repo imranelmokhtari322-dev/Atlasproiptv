@@ -168,7 +168,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-1",
     question: "Qu'est-ce que ATlas pro IPTV et comment ça fonctionne exactement ?",
-    answer: "ATlas pro est un fournisseur IPTV premium qui diffuse la télévision via Internet. Vous n'avez plus besoin d'antenne ni de câbles coaxiaux. Avec notre abonnement, vous accédez directement via une application pratique sur votre Smart TV, téléphone, tablette ou ordinateur à plus de 20 000 chaînes en direct, dont toutes les chaînes néerlandaises, les chaînes sportives (ESPN, Ziggo, Viaplay) et une immense bibliothèque de films et de séries (VOD)."
+    answer: "Atlas Pro IPTV est un fournisseur IPTV premium qui diffuse la télévision via Internet. Vous n'avez plus besoin d'antenne ni de câbles coaxiaux. Avec notre abonnement, vous accédez directement via une application pratique sur votre Smart TV, téléphone, tablette ou ordinateur à plus de 23 000 chaînes en direct, dont toutes les chaînes françaises (TF1, France 2, Canal+, M6, BFM TV…), les chaînes sportives (RMC Sport, Eurosport, Canal+ Sport) et une immense bibliothèque de films et de séries (VOD)."
   },
   {
     id: "faq-2",
@@ -198,7 +198,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "faq-7",
     question: "Quels modes de paiement acceptez-vous ?",
-    answer: "Comme nous nous adressons aux marchés néerlandais et belge, nous proposons des méthodes de paiement nationales extrêmement sûres et fiables. Vous pouvez payer sans problème via iDEAL (avec toutes les banques néerlandaises comme ING, Rabobank, ABN, etc.), Bancontact (pour nos clients belges), PayPal et Carte de crédit (Visa/Mastercard)."
+    answer: "Comme nous nous adressons au marché français, nous proposons des méthodes de paiement sûres et fiables. Vous pouvez payer via Carte Bancaire (Visa/Mastercard/CB), PayPal et Virement bancaire. Le paiement est 100% sécurisé et vos identifiants vous sont envoyés en quelques minutes après confirmation."
   }
 ];
 
@@ -210,7 +210,7 @@ export const PRICING_MAPPING = {
     originalPricePerMonth: 14.99,
     hasDiscountTag: false,
     features: [
-      "23 000+ Chaînes (NL/BE/Int En direct)",
+      "23 000+ Chaînes (FR/Int En direct)",
       "80 000+ Films & Séries (VOD)",
       "Qualité 4K/UHD & Ultra HDR",
       "Serveurs Stables (99,9% disponibilité)",
@@ -226,7 +226,7 @@ export const PRICING_MAPPING = {
     hasDiscountTag: true,
     discountTagText: "POPULAIRE -33%",
     features: [
-      "23 000+ Chaînes (NL/BE/Int En direct)",
+      "23 000+ Chaînes (FR/Int En direct)",
       "80 000+ Films & Séries (VOD)",
       "Qualité 4K/UHD & Ultra HDR",
       "Serveurs Stables (99,9% disponibilité)",
@@ -243,7 +243,7 @@ export const PRICING_MAPPING = {
     hasDiscountTag: true,
     discountTagText: "GRANDE ÉCONOMIE -50%",
     features: [
-      "23 000+ Chaînes (NL/BE/Int En direct)",
+      "23 000+ Chaînes (FR/Int En direct)",
       "80 000+ Films & Séries (VOD)",
       "Qualité 4K/UHD & Ultra HDR",
       "Serveurs Stables (99,9% disponibilité)",
@@ -262,7 +262,7 @@ export const PRICING_MAPPING = {
     discountTagText: "OFFRE TEMPORAIRE : 12+3 MOIS GRATUITS",
     features: [
       "15 MOIS AU TOTAL (12 achetés, 3 offerts)",
-      "23 000+ Chaînes (NL/BE/Int En direct)",
+      "23 000+ Chaînes (FR/Int En direct)",
       "80 000+ Films & Séries (VOD)",
       "Qualité 4K/UHD & Ultra HDR",
       "Serveurs Stables (99,9% disponibilité)",

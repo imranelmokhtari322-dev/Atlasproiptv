@@ -225,7 +225,7 @@ export default function WhatsAppReviews() {
               <rect width="24" height="24" rx="5" fill="white" fillOpacity="0.15"/>
               <text x="5" y="18" fontSize="16" fontWeight="900" fill="white" fontFamily="Arial">B</text>
             </svg>
-            <span className="text-sm font-extrabold text-white">Bancontact</span>
+            <span className="text-sm font-extrabold text-white">Carte Bancaire</span>
           </div>
         </div>
       </div>

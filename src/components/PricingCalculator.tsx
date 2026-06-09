@@ -25,7 +25,7 @@ export default function PricingCalculator() {
   const [checkoutStep, setCheckoutStep] = useState<"details"|"payment"|"processing"|"success">("details");
   const [email, setEmail] = useState("");
   const [targetDevice, setTargetDevice] = useState("Smart TV (IPTV Smarters / Flix)");
-  const [paymentMethod, setPaymentMethod] = useState("ideal");
+  const [paymentMethod, setPaymentMethod] = useState("cb");
   const [selectedBank, setSelectedBank] = useState("ing");
   const [generatedLine, setGeneratedLine] = useState({ username:"", password:"", m3uUrl:"", host:"http://line.atlasproiptv.net:80" });
 
@@ -329,7 +329,7 @@ export default function PricingCalculator() {
                 <div className="text-left">
                   <h3 className="text-lg font-bold text-blue-900 mb-2">Choisissez votre mode de paiement</h3>
                   <form onSubmit={handleProcessPayment} className="flex flex-col gap-4 mt-5">
-                    {[{id:"ideal",label:"iDEAL (Pays-Bas)",badge:"Populaire"},{id:"bancontact",label:"Bancontact (Belgique)",badge:""},{id:"paypal",label:"PayPal",badge:""},{id:"cc",label:"Carte de crédit (Visa/MC)",badge:""}].map(pm=>(
+                    {[{id:"cb",label:"Carte Bancaire (CB/Visa/MC)",badge:"Populaire"},{id:"paypal",label:"PayPal",badge:""},{id:"virement",label:"Virement Bancaire",badge:""},{id:"crypto",label:"Crypto (Bitcoin/USDT)",badge:""}].map(pm=>(
                       <div key={pm.id} onClick={()=>setPaymentMethod(pm.id)}
                         className={`p-4 rounded-xl border cursor-pointer transition-all ${paymentMethod===pm.id?"bg-blue-50 border-blue-400":"bg-white border-blue-100 hover:border-blue-200"}`}>
                         <div className="flex items-center justify-between">
@@ -341,9 +341,9 @@ export default function PricingCalculator() {
                           </span>
                           {pm.badge&&<span className="bg-blue-600 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">{pm.badge}</span>}
                         </div>
-                        {pm.id==="ideal"&&paymentMethod==="ideal"&&(
+                        {pm.id==="cb"&&paymentMethod==="cb"&&(
                           <select value={selectedBank} onChange={e=>setSelectedBank(e.target.value)} className="mt-3 w-full bg-white border border-blue-200 rounded-lg py-2 px-3 text-xs text-blue-900">
-                            {["ing","rabobank","abn-amro","sns","bunq","revolut"].map(b=><option key={b} value={b}>{b.charAt(0).toUpperCase()+b.slice(1)}</option>)}
+                            {["BNP Paribas","Société Générale","Crédit Agricole","LCL","La Banque Postale","Revolut"].map(b=><option key={b} value={b}>{b}</option>)}
                           </select>
                         )}
                       </div>
