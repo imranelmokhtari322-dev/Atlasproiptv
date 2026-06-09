@@ -39,7 +39,7 @@ export default function Header({ onScrollTo, onOpenReseller }: HeaderProps) {
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-900" />
             </span>
             <span className="relative font-extrabold tracking-widest uppercase text-sm sm:text-base font-display">
-              🎁 3 Mois Gratuits Aujourd'hui !
+              #1 IPTV aux Pays-Bas selon nos clients
             </span>
             <span className="relative hidden sm:inline-block bg-blue-900 text-amber-400 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">
               Offre limitée
