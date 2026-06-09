@@ -197,7 +197,7 @@ export default function PricingCalculator() {
 
             <div className="flex flex-col gap-2.5 mb-6 flex-1">
               {[
-                "SD/HD/FULL HD/4K/8K/HDR-VR",
+                "SD/HD/FULL HD/4K UHD",
                 "+80 000 Chaînes + Netflix",
                 "TF1, M6, Canal+, BFM TV, Arte, France 2/3/5",
                 "+200 000 Films & Séries",
